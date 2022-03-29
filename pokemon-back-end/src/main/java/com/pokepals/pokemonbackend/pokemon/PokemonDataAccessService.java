@@ -71,7 +71,26 @@ public class PokemonDataAccessService implements PokemonDAO {
 
     @Override
     public int addPokemon(Pokemon pokemon) {
-        return 0;
+        String sql = """
+                INSERT INTO pokedex (SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level)
+                VALUES(?, ?, ?, ?, ?, ?, ?)
+                """;
+        // Use .update Method when Inserting/deleting/updating
+
+//        int result -
+//                pokemon.getId(),
+//        int result = jdbcTemplate.update(
+//                insertSql,
+//                appointment.getPatientNhsId(),
+//                appointment.getDoctorId(),
+//                appointment.getAppointmentDate().toString(),
+//                appointment.getAppointmentTime().toString()
+//        );
+//        return result;
+    }
+
+
+
     }
 
 
