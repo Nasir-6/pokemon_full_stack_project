@@ -6,12 +6,14 @@ public class Pokemon {
     private Integer id;
     private Integer trainer_id ;
     private String name;
-    private String pokeapi_id;
+    private Integer pokeapi_id;
     private String sprite_link;
     private Integer hp;
     private Integer level;
 
-    public Pokemon(Integer id, Integer trainer_id, String name, String pokeapi_id, String sprite_link, Integer hp, Integer level) {
+    public Pokemon(){}
+
+    public Pokemon(Integer id, Integer trainer_id, String name, Integer pokeapi_id, String sprite_link, Integer hp, Integer level) {
         this.id = id;
         this.trainer_id = trainer_id;
         this.name = name;
@@ -33,7 +35,7 @@ public class Pokemon {
         return name;
     }
 
-    public String getPokeapi_id() {
+    public Integer getPokeapi_id() {
         return pokeapi_id;
     }
 
@@ -61,7 +63,7 @@ public class Pokemon {
         this.name = name;
     }
 
-    public void setPokeapi_id(String pokeapi_id) {
+    public void setPokeapi_id(Integer pokeapi_id) {
         this.pokeapi_id = pokeapi_id;
     }
 
@@ -90,17 +92,17 @@ public class Pokemon {
         return Objects.hash(id, trainer_id, name, pokeapi_id, sprite_link, hp, level);
     }
 
-
     @Override
     public String toString() {
         return "Pokemon{" +
                 "id=" + id +
                 ", trainer_id=" + trainer_id +
                 ", name='" + name + '\'' +
-                ", pokeapi_id='" + pokeapi_id + '\'' +
+                ", pokeapi_id=" + pokeapi_id +
                 ", sprite_link='" + sprite_link + '\'' +
                 ", hp=" + hp +
                 ", level=" + level +
                 '}';
     }
 }
+
