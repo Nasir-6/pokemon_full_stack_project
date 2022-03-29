@@ -46,7 +46,21 @@ public class TrainerDataAccessService implements TrainerDAO{
 
     @Override
     public int addTrainer(Trainer trainer) {
-        return 0;
+        String sql = """
+                INSERT INTO trainer (name, email, password, sprite_link)
+                VALUES(?, ?, ?, ?)
+                """;
+
+        // Use .update Method when Inserting/deleting/updating
+
+        int result = jdbcTemplate.update(
+                sql,
+                trainer.getName(),
+                trainer.getEmail(),
+                trainer.getPassword(),
+                trainer.getSprite_link()
+        );
+        return result;
     }
 
     @Override
