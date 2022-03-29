@@ -24,6 +24,23 @@ public class PokemonService {
         return pokemonList;
     }
 
+//    Pokemon getPokemonById(Integer id);
+    public Pokemon getPokemonById(Integer id) {
+        if (id == null || id <= 0) {
+            throw new IllegalStateException("Invalid Pokemon ID");
+        }
+        Pokemon pokemon = pokemonDAO.getPokemonById(id);
+        if (pokemon == null) {
+            throw new IllegalStateException("No pokemon found");
+        }
+        // Return pokemon by ID
+        return pokemon;
+
+    }
+
+
+
+
 
     //instance of the Pokemon DAO
 

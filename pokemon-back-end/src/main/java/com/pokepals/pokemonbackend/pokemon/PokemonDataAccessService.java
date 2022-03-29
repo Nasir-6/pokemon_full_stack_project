@@ -13,7 +13,6 @@ public class PokemonDataAccessService implements PokemonDAO {
     }
 
 
-
     @Override
     public List<Pokemon> getAllPokemon() {
         String sql = """
@@ -42,10 +41,30 @@ public class PokemonDataAccessService implements PokemonDAO {
     }
 
 
-
     @Override
     public Pokemon getPokemonById(Integer id) {
-        return null;
+        String sql = """
+                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level 
+                FROM pokedex WHERE id = ?
+                """;
+        RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
+            return new Pokemon(
+                    rs.getInt("id"),
+                    rs.getInt("trainer_id"),
+                    rs.getString("name"),
+                    rs.getInt("pokeapi_id"),
+                    rs.getString("sprite_link"),
+                    rs.getInt("hp"),
+                    rs.getInt("level")
+            );
+        };
+
+        List<Pokemon> pokemonList = jdbcTemplate.query(sql, pokemonRowMapper, id);
+        if (pokemonList.isEmpty()) {
+            return null;
+        } else {
+            return pokemonList.get(0);
+        }
     }
 
 
