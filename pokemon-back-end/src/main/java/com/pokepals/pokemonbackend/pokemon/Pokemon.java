@@ -91,6 +91,7 @@ public class Pokemon {
     public int hashCode() {
         return Objects.hash(id, trainer_id, name, pokeapi_id, sprite_link, hp, level);
     }
+
     @Override
     public String toString() {
         return "Pokemon{" +

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class PokemonService {
-    //create an instance of pokemonDAO
+    //create a property of pokemonDAO
     private PokemonDAO pokemonDAO;
 
     //constructor of pokemonDAO

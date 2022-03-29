@@ -1,26 +1,46 @@
 package com.pokepals.pokemonbackend.trainer;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
 public class TrainerService {
 
- //instance of the TrainerDAO
+    //property of trainerService
+    private TrainerDAO trainerDAO;
+
+    //creates an instance passing the trainerDAO
+    public TrainerService(@Qualifier("trainer_postgres")TrainerDAO trainerDAO) {
+        this.trainerDAO = trainerDAO;
+    }
+
+    public Trainer getTrainerById(Integer id) {
+        if (id == null || id <= 0){
+            throw new IllegalStateException("Trainer ID invalid");
+        }
+
+        Trainer trainer = trainerDAO.getTrainerById(id);
+
+        if (trainer == null) {
+            throw new IllegalStateException("Trainer not found");
+        }
+
+        return trainer;
+    }
 
 
-//1.Verification of Email
-// 2. Verification of Password
-
-//3. Select all Trainer (?)
-//4. Add a Trainer (addTrainerById)
-    //check if the email is already in the database
-    //exception for trainer already in the database
-    // if not, add in the new trainer
-
-//5. Update Trainer Email (?)
 
 
-//6. Update Trainer Password (?)
+//    int addTrainer(Trainer trainer);
+//    int deleteTrainerById(Integer id);
+//    //extension
+//    List<Trainer> getAllTrainer();
+//    Trainer updateTrainer(Integer trainer_id, Trainer update);
 
 
-//6. Delete Trainer (deleteTrainerById)
+
+
 
 
 
