@@ -7,7 +7,7 @@ export default function Home() {
 
     // fetch a pokemon and console.log the url
     const grabPokemonSprite = async () => {
-        const newSpriteUrl = await fetch("https://pokeapi.co/api/v2/pokemon/1/")
+        const newSpriteUrl = await fetch("https://pokeapi.co/api/v2/pokemon/2/")
         .then(response => response.json())
         .then(onePokemon => onePokemon.sprites.front_default)
 
@@ -23,6 +23,12 @@ export default function Home() {
 
 
   return (
-    <h2>Home</h2>
-  )
+    <>
+      <h2>Home</h2>
+      <img
+        src={spriteUrl}
+        alt=""
+      />      
+    </>
+  );
 }
