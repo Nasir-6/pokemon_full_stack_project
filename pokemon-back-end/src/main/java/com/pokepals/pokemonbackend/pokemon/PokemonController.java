@@ -13,8 +13,8 @@ public class PokemonController {
     public PokemonController(PokemonService pokemonService) {
         this.pokemonService = pokemonService;
     }
-
-    @GetMapping(path = "pokemon/all")
+    
+    @GetMapping(path = "pokemon")
     public List<Pokemon> pokemonList() {
         return pokemonService.getAllPokemon();
     }
