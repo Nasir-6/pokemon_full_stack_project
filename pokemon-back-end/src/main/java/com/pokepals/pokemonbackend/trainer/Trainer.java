@@ -3,13 +3,13 @@ package com.pokepals.pokemonbackend.trainer;
 import java.util.Objects;
 
 public class Trainer {
-    private int id;
+    private Integer id;
     private String name;
     private String email;
     private String password;
     private String sprite_link;
 
-    public Trainer(int id, String name, String email, String password, String sprite_link) {
+    public Trainer(Integer id, String name, String email, String password, String sprite_link) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -17,11 +17,11 @@ public class Trainer {
         this.sprite_link = sprite_link;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
