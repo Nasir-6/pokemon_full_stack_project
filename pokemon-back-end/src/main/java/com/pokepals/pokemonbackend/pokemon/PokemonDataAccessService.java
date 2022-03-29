@@ -44,7 +44,7 @@ public class PokemonDataAccessService implements PokemonDAO {
 
 
     @Override
-    public List<Pokemon> selectAllPokemonById(Integer id) {
+    public Pokemon getPokemonById(Integer id) {
         return null;
     }
 
@@ -62,5 +62,10 @@ public class PokemonDataAccessService implements PokemonDAO {
         return 0;
     }
 
+    @Override
+    public List<Pokemon> getAllPokemonByTrainerId(Integer trainerId) {
+        return null;
     }
+
+}
 

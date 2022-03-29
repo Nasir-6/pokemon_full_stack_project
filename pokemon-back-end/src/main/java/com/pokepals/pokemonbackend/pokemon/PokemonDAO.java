@@ -5,9 +5,10 @@ import java.util.List;
 public interface PokemonDAO {
 
     List<Pokemon> getAllPokemon();
-    List<Pokemon> selectAllPokemonById(Integer id);
+    Pokemon getPokemonById(Integer id);
     int addPokemon (Pokemon pokemon);
     int deletePokemonById (Integer id);
+    List<Pokemon> getAllPokemonByTrainerId (Integer trainerId);
 
 //    int updatePokemonById (Integer id)
 

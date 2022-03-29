@@ -15,7 +15,7 @@ public class PokemonController {
     }
     
     @GetMapping(path = "pokemon")
-    public List<Pokemon> pokemonList() {
+    public List<Pokemon> getAllPokemon() {
         return pokemonService.getAllPokemon();
     }
 
