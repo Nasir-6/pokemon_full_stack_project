@@ -16,6 +16,33 @@ public class TrainerDataAccessService implements TrainerDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
+    public List<Trainer> getAllTrainers() {
+
+        String sql = """
+                SELECT id, name, email, password, sprite_link
+                FROM trainer
+                """;
+
+        RowMapper<Trainer> trainerRowMapper = (rs, rowNum) -> {  //rowmapper to go through each row, gives you result set, which we then turn into ints, strings etc to make a new car object
+            Trainer trainer = new Trainer(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("email"),
+                    rs.getString("password"),
+                    rs.getString("sprite_link")
+            );
+            return trainer; //so its not lost in the heap
+        };
+
+        List<Trainer> trainerList = jdbcTemplate.query(sql, trainerRowMapper);
+        if (trainerList.isEmpty()) {
+            return null;
+        } else {
+            return trainerList;
+        }
+    }
+
 
     @Override
     public Trainer getTrainerById(Integer id) {
@@ -68,10 +95,6 @@ public class TrainerDataAccessService implements TrainerDAO{
         return 0;
     }
 
-    @Override
-    public List<Trainer> getAllTrainer() {
-        return null;
-    }
 
     @Override
     public Trainer updateTrainer(Integer trainer_id, Trainer update) {

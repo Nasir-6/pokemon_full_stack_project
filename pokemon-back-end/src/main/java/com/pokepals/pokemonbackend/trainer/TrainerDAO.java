@@ -8,12 +8,11 @@ import java.util.List;
 public interface TrainerDAO {
 
 
-
+     List<Trainer> getAllTrainers();
      Trainer getTrainerById(Integer id);
      int addTrainer(Trainer trainer);
      int deleteTrainerById(Integer id);
      //extension
-     List<Trainer> getAllTrainer();
      Trainer updateTrainer(Integer trainer_id, Trainer update);
 
 
