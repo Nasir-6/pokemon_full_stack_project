@@ -1,7 +1,5 @@
 package com.pokepals.pokemonbackend.trainer;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +17,10 @@ public class TrainerController {
         return trainerService.getTrainerById(id);
     }
 
-
+    @PostMapping(path = "trainer")
+    public Trainer addPerson(@RequestBody Trainer trainer) {
+        return trainerService.addTrainer(trainer);
+    }
 
 
 
