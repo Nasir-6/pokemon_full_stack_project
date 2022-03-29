@@ -1,6 +1,7 @@
 package com.pokepals.pokemonbackend.trainer;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,6 +13,11 @@ public class TrainerController {
         this.trainerService = trainerService;
     }
 
+    @GetMapping(path = "trainer")
+    public List<Trainer> getAllTrainers(){
+        return trainerService.getAllTrainers();
+    }
+
     @GetMapping(path = "trainer/{id}")
     public Trainer getTrainerById(@PathVariable("id") Integer id){
         return trainerService.getTrainerById(id);
@@ -21,6 +27,8 @@ public class TrainerController {
     public Trainer addPerson(@RequestBody Trainer trainer) {
         return trainerService.addTrainer(trainer);
     }
+
+
 
 
 

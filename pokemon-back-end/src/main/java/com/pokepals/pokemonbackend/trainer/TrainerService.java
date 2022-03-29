@@ -3,6 +3,8 @@ package com.pokepals.pokemonbackend.trainer;
 import com.pokepals.pokemonbackend.pokemon.Pokemon;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,6 +16,23 @@ public class TrainerService {
     //creates an instance passing the trainerDAO
     public TrainerService(@Qualifier("trainer_postgres")TrainerDAO trainerDAO) {
         this.trainerDAO = trainerDAO;
+    }
+
+
+    public List<Trainer> getAllTrainers(){
+        return trainerDAO.getAllTrainers();
+    }
+
+    public Trainer getTrainerByEmail(String email){
+        List<Trainer> allTrainersInDb = trainerDAO.getAllTrainers();
+        System.out.println(allTrainersInDb);
+        for (Trainer trainer : allTrainersInDb) {
+            if (trainer.getEmail().equals(email)) {
+                System.out.println("Trainer found in db");
+                return trainer;
+            }
+        }
+        return null;
     }
 
     public Trainer getTrainerById(Integer id) {
@@ -32,11 +51,22 @@ public class TrainerService {
 
     public Trainer addTrainer(Trainer trainer) {
         checkTrainerInputs(trainer);
+
+        // Verify trainer with same email doesn't exist in DB
+        Trainer trainerInDb = getTrainerByEmail(trainer.getEmail());
+        if(trainerInDb != null){
+            // Found someone in db with email already
+            throw new IllegalStateException("Trainer with same email already exists");
+        }
+
         int result = trainerDAO.addTrainer(trainer);
+
         if (result == 0) {
             throw new IllegalStateException("Unable to add to database");
         }
-        return trainer;
+
+        // Return the new trainer in DB for use after Post Request
+        return getTrainerByEmail(trainer.getEmail());
     }
 
     private void checkTrainerInputs(Trainer trainer) {
