@@ -23,30 +23,28 @@ public class TrainerService {
         return trainerDAO.getAllTrainers();
     }
 
-    public Trainer getTrainerByEmail(String email){
-        List<Trainer> allTrainersInDb = trainerDAO.getAllTrainers();
-        System.out.println(allTrainersInDb);
-        for (Trainer trainer : allTrainersInDb) {
-            if (trainer.getEmail().equals(email)) {
-                System.out.println("Trainer found in db");
-                return trainer;
-            }
-        }
-        return null;
-    }
-
     public Trainer getTrainerById(Integer id) {
         if (id == null || id <= 0){
             throw new IllegalStateException("Trainer ID invalid");
         }
 
         Trainer trainer = trainerDAO.getTrainerById(id);
-
         if (trainer == null) {
             throw new IllegalStateException("Trainer not found");
         }
-
         return trainer;
+    }
+
+
+    //This is used for checking if trainer with email
+    public Trainer getTrainerByEmail(String email){
+        List<Trainer> allTrainersInDb = trainerDAO.getAllTrainers();
+        for (Trainer trainer : allTrainersInDb) {
+            if (trainer.getEmail().equals(email)) {
+                return trainer;
+            }
+        }
+        return null;
     }
 
     public Trainer addTrainer(Trainer trainer) {
@@ -60,7 +58,6 @@ public class TrainerService {
         }
 
         int result = trainerDAO.addTrainer(trainer);
-
         if (result == 0) {
             throw new IllegalStateException("Unable to add to database");
         }
@@ -86,10 +83,9 @@ public class TrainerService {
 
 
 
-//    int addTrainer(Trainer trainer);
+
 //    int deleteTrainerById(Integer id);
 //    //extension
-//    List<Trainer> getAllTrainer();
 //    Trainer updateTrainer(Integer trainer_id, Trainer update);
 
 
