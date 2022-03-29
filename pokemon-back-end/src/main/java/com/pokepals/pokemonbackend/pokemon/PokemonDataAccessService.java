@@ -75,6 +75,7 @@ public class PokemonDataAccessService implements PokemonDAO {
                 INSERT INTO pokedex (SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level)
                 VALUES(?, ?, ?, ?, ?, ?, ?)
                 """;
+
         // Use .update Method when Inserting/deleting/updating
 
 //        int result -
@@ -87,10 +88,9 @@ public class PokemonDataAccessService implements PokemonDAO {
 //                appointment.getAppointmentTime().toString()
 //        );
 //        return result;
-    }
 
 
-
+    return 0;
     }
 
 
