@@ -3,25 +3,25 @@ package com.pokepals.pokemonbackend.trainer;
 import java.util.Objects;
 
 public class Trainer {
-    private int id;
+    private Integer id;
     private String name;
-    private String emailAddress;
+    private String email;
     private String password;
-    private String spriteLink;
+    private String sprite_link;
 
-    public Trainer(int id, String name, String emailAddress, String password, String spriteLink) {
+    public Trainer(Integer id, String name, String email, String password, String sprite_link) {
         this.id = id;
         this.name = name;
-        this.emailAddress = emailAddress;
+        this.email = email;
         this.password = password;
-        this.spriteLink = spriteLink;
+        this.sprite_link = sprite_link;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,12 +33,12 @@ public class Trainer {
         this.name = name;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -49,12 +49,12 @@ public class Trainer {
         this.password = password;
     }
 
-    public String getSpriteLink() {
-        return spriteLink;
+    public String getSprite_link() {
+        return sprite_link;
     }
 
-    public void setSpriteLink(String spriteLink) {
-        this.spriteLink = spriteLink;
+    public void setSprite_link(String sprite_link) {
+        this.sprite_link = sprite_link;
     }
 
     @Override
@@ -62,22 +62,23 @@ public class Trainer {
         if (this == o) return true;
         if (!(o instanceof Trainer)) return false;
         Trainer trainer = (Trainer) o;
-        return id == trainer.id && Objects.equals(name, trainer.name) && Objects.equals(emailAddress, trainer.emailAddress) && Objects.equals(password, trainer.password) && Objects.equals(spriteLink, trainer.spriteLink);
+        return id == trainer.id && Objects.equals(name, trainer.name) && Objects.equals(email, trainer.email) && Objects.equals(password, trainer.password) && Objects.equals(sprite_link, trainer.sprite_link);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, emailAddress, password, spriteLink);
+        return Objects.hash(id, name, email, password, sprite_link);
     }
+
 
     @Override
     public String toString() {
         return "Trainer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", spriteLink='" + spriteLink + '\'' +
+                ", sprite_link='" + sprite_link + '\'' +
                 '}';
     }
 }
