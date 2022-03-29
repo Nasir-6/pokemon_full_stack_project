@@ -17,6 +17,11 @@ public class PokemonController {
     public List<Pokemon> getAllPokemon() {
         return pokemonService.getAllPokemon();
     }
+    // addpokemon
+    @PostMapping(path = "pokemon")
+    public void addPokemon (@RequestBody Pokemon pokemon){
+        pokemonService.addPokemon(pokemon);
+    }
 
     @GetMapping(path = "pokemon/{id}")
     public Pokemon getPokemonById(@PathVariable("id") Integer id) { return pokemonService.getPokemonById(id); }

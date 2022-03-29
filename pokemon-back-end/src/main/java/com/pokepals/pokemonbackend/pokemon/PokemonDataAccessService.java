@@ -78,32 +78,57 @@ public class PokemonDataAccessService implements PokemonDAO {
 
         // Use .update Method when Inserting/deleting/updating
 
-//        int result -
-//                pokemon.getId(),
-//        int result = jdbcTemplate.update(
-//                insertSql,
-//                appointment.getPatientNhsId(),
-//                appointment.getDoctorId(),
-//                appointment.getAppointmentDate().toString(),
-//                appointment.getAppointmentTime().toString()
-//        );
-//        return result;
-
-
-    return 0;
-    }
-
-
-
-    @Override
-    public int deletePokemonById(Integer id) {
-        return 0;
+        int result = jdbcTemplate.update(
+                sql,
+                pokemon.getId(),
+                pokemon.getTrainer_id(),
+                pokemon.getName(),
+                pokemon.getPokeapi_id(),
+                pokemon.getSprite_link(),
+                pokemon.getHp(),
+                pokemon.getLevel()
+        );
+        return result;
     }
 
     @Override
-    public List<Pokemon> getAllPokemonByTrainerId(Integer trainerId) {
-        return null;
+    public int deletePokemonById (Integer id) {
+        String sql = "DELETE FROM pokedex WHERE id = ?";
+        int result = jdbcTemplate.update(sql, id);
+        return result;
+    }
+    @Override
+    public List <Pokemon> getAllPokemonByTrainerId (Integer trainerId) {
+        String sql = """
+                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level 
+                FROM pokedex WHERE trainer_id = ?
+                """;
+        RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
+            Pokemon allPokemon = new Pokemon(
+                    rs.getInt("id"),
+                    rs.getInt("trainer_id"),
+                    rs.getString("name"),
+                    rs.getInt("pokeapi_id"),
+                    rs.getString("sprite_link"),
+                    rs.getInt("hp"),
+                    rs.getInt("level")
+            );
+            return allPokemon;
+        };
+
+        List <Pokemon> pokemonList = jdbcTemplate.query(sql,pokemonRowMapper,trainerId);
+        if(pokemonList.isEmpty()) {
+            return null;
+        } else {
+            return pokemonList;
+        }
+    }
     }
 
-}
+
+
+
+
+
+
 
