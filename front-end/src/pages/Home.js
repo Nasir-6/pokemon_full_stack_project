@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react'
 export default function Home() {
 
     const [spriteUrl, setSpriteUrl] = useState("")
+    const [wildPokemonId, setWildPokemonId] = useState("1")
 
     // fetch a pokemon and console.log the url
     const grabPokemonSprite = async () => {
-        const newSpriteUrl = await fetch("https://pokeapi.co/api/v2/pokemon/2/")
+        const newSpriteUrl = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
         .then(response => response.json())
         .then(onePokemon => onePokemon.sprites.front_default)
 
@@ -17,7 +18,19 @@ export default function Home() {
 
     useEffect(()=>{
         grabPokemonSprite();
+    },[wildPokemonId])
+
+    useEffect(()=>{
+        wildPokemonIdGenerator();
     },[])
+
+
+    // Function to generate wildPokemonId (between 1 and 493)
+    const wildPokemonIdGenerator = () => {
+        setWildPokemonId(Math.floor(Math.random() * 493) + 1);
+    }
+
+
 
     
 
