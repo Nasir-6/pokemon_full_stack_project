@@ -4,37 +4,43 @@
 
 ```sql
 -- type psql in terminal to launch postgresql
-CREATE DATABASE not_my_fitness_pal;
+CREATE DATABASE pokemon;
 ```
 
 - Postico setup
 
 ```sql
-CREATE TABLE people (
-id SERIAL PRIMARY KEY,
-name VARCHAR(255),
-age INT,
-height_in_cm DECIMAL(4,1),
-weight_in_kg DECIMAL(4,1),
-calorie_target INT
+DROP TABLE IF EXISTS pokedex CASCADE;
+DROP TABLE IF EXISTS trainer CASCADE;
+
+CREATE TABLE trainer (
+id SERIAL PRIMARY KEY NOT NULL,
+name VARCHAR(50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+password VARCHAR(255) NOT NULL,
+sprite_link VARCHAR(255) NOT NULL
 );
 
-INSERT INTO people (name, age, height_in_cm, weight_in_kg, calorie_target)
-VALUES ('Sarina', 22, 167.0, 58, 2000);
+INSERT INTO trainer (name, email, password, sprite_link)
+VALUES ('Nasir', 'nasir@gmail.com', 'password', 'changeme');
 
-
-CREATE TABLE food_entries (
-id SERIAL PRIMARY KEY,
-person_id INT REFERENCES people(id) NOT NULL,
-name VARCHAR(255),
-meal_type VARCHAR(255),
-notes TEXT,
-calories INT,
-week INT,
-day VARCHAR(255)
+CREATE TABLE pokedex (
+id SERIAL PRIMARY KEY NOT NULL,
+trainer_id INT REFERENCES trainer(id) NOT NULL,
+name VARCHAR(50) NOT NULL,
+pokeapi_id INT NOT NULL,
+sprite_link VARCHAR(255) NOT NULL,
+hp INT NOT NULL,
+level INT NOT NULL
 );
 
-INSERT INTO food_entries (person_id, name, meal_type, notes, calories, week, day)
-VALUES (1, 'toast', 'BREAKFAST', 'Kingsmill 50/50 bread with butter', 60, 1, 'MONDAY');
-INSERT INTO food_entries (person_id, name, meal_type, notes, calories, week, day)
-VALUES (1, 'cereal', 'BREAKFAST', 'Curiously Cinnamon', 400, 1, 'TUESDAY');
+INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)
+VALUES (1, 'Bulbasaur', 1, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png', 64, 5);
+
+INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)
+VALUES (1, 'Charmander', 4, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png', 70, 6);
+
+INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)
+VALUES (1, 'Squirtle', 7, 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png', 58, 4);
+
+```
