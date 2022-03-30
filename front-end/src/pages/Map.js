@@ -1,5 +1,5 @@
 import React from 'react'
-import WildPokemon from '../components/WildPokemon'
+import WildPokemon from '../containers/WildPokemon'
 
 export default function Map() {
   return (
