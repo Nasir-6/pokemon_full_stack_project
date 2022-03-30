@@ -59,7 +59,7 @@ public class PokemonService {
             throw new IllegalStateException("Pokemon API id cannot be less than or equal to 0");
 
         } else if(pokemon.getSprite_link() == null) {
-            throw new IllegalStateException("Pokemon sprite Link cannot be less than or equal to 0");
+            throw new IllegalStateException("Pokemon sprite Link cannot be null");
 
         } else if(pokemon.getHp () == null) {
             throw new IllegalStateException("Pokemon Hp cannot be null");

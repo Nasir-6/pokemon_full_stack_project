@@ -30,10 +30,6 @@ public class TrainerController {
 
 
 
-
-
-
-
 //    int deleteTrainerById(Integer id);
 //    //extension
 //    Trainer updateTrainer(Integer trainer_id, Trainer update)
