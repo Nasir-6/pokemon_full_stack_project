@@ -4,30 +4,28 @@
 //     <div>Footer</div>
 //   )
 // }
-
 import React from "react";
 import "../App.css"
 import POKEPALS from "../images/POKEPALS.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons"
 
 
 const Footer = () => {
     return (
         <footer className="footer-container">
-            <ul>
-  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-  <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-</ul>
-            
-              <img className="footer-logo" src={POKEPALS} alt="pokepals logo"></img>
-            
 
+          
+
+            <img className="footer-logo" src={POKEPALS} alt="pokepals logo"></img>
+            
             <div className="footer-middle">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
+            <ul>
+              <li><a href="#">< FontAwesomeIcon icon={faFacebook} className="social-icon"/></a></li>
+              <li><a href="#">< FontAwesomeIcon icon={faTwitter} className="social-icon" /></a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faInstagram} className="social-icon"/></a></li>
+            </ul>
             </div>
-
             <div className="footer-right">
               <p>Copyright</p>
               <span className="copyright-symbol">©</span>
