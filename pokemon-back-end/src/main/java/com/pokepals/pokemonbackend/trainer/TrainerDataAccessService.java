@@ -90,9 +90,12 @@ public class TrainerDataAccessService implements TrainerDAO{
         return result;
     }
 
+
     @Override
     public int deleteTrainerById(Integer id) {
-        return 0;
+        String sql = "DELETE FROM trainer WHERE id = ?";
+        int result = jdbcTemplate.update(sql, id);
+        return result;
     }
 
 

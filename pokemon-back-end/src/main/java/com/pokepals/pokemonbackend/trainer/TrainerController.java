@@ -28,6 +28,11 @@ public class TrainerController {
         return trainerService.addTrainer(trainer);
     }
 
+    @DeleteMapping(path = "trainer/{id}")
+    public int deleteTrainerById(@PathVariable("id") Integer id){
+        return trainerService.deleteTrainerById(id);
+    }
+
 
 
 //    int deleteTrainerById(Integer id);

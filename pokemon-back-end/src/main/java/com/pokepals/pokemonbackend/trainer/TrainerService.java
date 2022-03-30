@@ -24,8 +24,10 @@ public class TrainerService {
     }
 
     public Trainer getTrainerById(Integer id) {
-        if (id == null || id <= 0){
-            throw new IllegalStateException("Trainer ID invalid");
+        if (id == null) {
+            throw new IllegalStateException("ID cannot be null");
+        } else if (id <= 0) {
+            throw new IllegalStateException("ID cannot be less than or equal to 0");
         }
 
         Trainer trainer = trainerDAO.getTrainerById(id);
@@ -37,7 +39,7 @@ public class TrainerService {
 
 
     //This is used for checking if trainer with email
-    public Trainer getTrainerByEmail(String email){
+    private Trainer getTrainerByEmail(String email){
         List<Trainer> allTrainersInDb = trainerDAO.getAllTrainers();
         for (Trainer trainer : allTrainersInDb) {
             if (trainer.getEmail().equals(email)) {
@@ -80,6 +82,24 @@ public class TrainerService {
         // Also, sprite link needs to be a valid link
     }
 
+    public int deleteTrainerById(Integer id) {
+        if (id == null) {
+            throw new IllegalStateException("ID cannot be null");
+        } else if (id <= 0) {
+            throw new IllegalStateException("ID cannot be less than or equal to 0");
+        }
+
+        Trainer trainerInDb = trainerDAO.getTrainerById(id);
+        if (trainerInDb == null) {
+            throw new IllegalStateException("This Trainer ID does not exist in database");
+        }
+
+        int result = trainerDAO.deleteTrainerById(id);
+        if (result !=1) {
+            throw new IllegalStateException("Unable to delete Trainer");
+        }
+        return result;
+    }
 
 
 
