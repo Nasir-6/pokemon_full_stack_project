@@ -5,7 +5,10 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <p>Logo</p>
+        <p>
+        {/* <img src = {X} alt = "Logo"/> */}
+
+        </p>
       </div>
 
       <div className="navbar-right">
