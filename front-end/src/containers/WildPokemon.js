@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function WildPokemon() {
 
     const [spriteUrl, setSpriteUrl] = useState("")
-    const [wildPokemonId, setWildPokemonId] = useState("1")
+    const [wildPokemonId, setWildPokemonId] = useState(1)
     const [foundWildPokemon, setFoundWildPokemon] = useState(true);
 
     // fetch a pokemon and console.log the url
@@ -31,8 +31,7 @@ export default function WildPokemon() {
             setWildPokemonId(Math.floor(Math.random() * 493) + 1);
         } else if(wildPokemonProbability < 0.6){
             setFoundWildPokemon(false)
-        }
-        
+        }  
     }
 
   return (

@@ -1,3 +1,24 @@
+:root{
+  --logo-color: rgb(255 204 0);
+  --color: rgb(213 161 0);
+  --color1: rgb(0 117 190);
+  --dark-color: #1C2541;
+  --background-color: #CCE3F5;
+  --primary-color: #eff0f0;
+  --secondary-color: #eff0f0;
+
+
+  /* RGB: (255 204 0)
+RGB: (213 161 0)
+RGB: (0 117 190)
+RGB: (10 40 95)
+RGB: (251 27 27)
+RGB: (251 27 27)
+RGB: (223 223 223) */
+}
+
+
+
 .App {
   text-align: center;
 }
@@ -5,4 +26,82 @@
 /* .userSprite {
   background-color: red;
 } */
+
+
+
+/* Navbar CSS */
+
+
+
+
+
+
+
+
+/* Footer CSS */
+
+
+
+
+
+
+
+
+
+/* Home Page CSS */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Login Page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Signup Page */
+
+
+
+
+
+
+
+
+
+
+
+/* Pokedex Page */
+
+
+
+
+
+
+
+
+
+
+
+/* Map Page */
+
+
+
+
 
