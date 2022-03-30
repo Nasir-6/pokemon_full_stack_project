@@ -71,16 +71,16 @@ public class PokemonDataAccessService implements PokemonDAO {
 
     @Override
     public int addPokemon(Pokemon pokemon) {
+
         String sql = """
-                INSERT INTO pokedex (SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level)
-                VALUES(?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)
+                VALUES(?, ?, ?, ?, ?, ?)
                 """;
 
         // Use .update Method when Inserting/deleting/updating
 
         int result = jdbcTemplate.update(
                 sql,
-                pokemon.getId(),
                 pokemon.getTrainer_id(),
                 pokemon.getName(),
                 pokemon.getPokeapi_id(),
@@ -100,11 +100,11 @@ public class PokemonDataAccessService implements PokemonDAO {
     @Override
     public List <Pokemon> getAllPokemonByTrainerId (Integer trainerId) {
         String sql = """
-                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level 
+                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level
                 FROM pokedex WHERE trainer_id = ?
                 """;
         RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
-            Pokemon allPokemon = new Pokemon(
+            Pokemon onePokemon = new Pokemon(
                     rs.getInt("id"),
                     rs.getInt("trainer_id"),
                     rs.getString("name"),
@@ -113,17 +113,17 @@ public class PokemonDataAccessService implements PokemonDAO {
                     rs.getInt("hp"),
                     rs.getInt("level")
             );
-            return allPokemon;
+            return onePokemon;
         };
 
-        List <Pokemon> pokemonList = jdbcTemplate.query(sql,pokemonRowMapper,trainerId);
-        if(pokemonList.isEmpty()) {
+        List<Pokemon> pokemonList = jdbcTemplate.query(sql, pokemonRowMapper, trainerId);
+        if (pokemonList.isEmpty()) {
             return null;
         } else {
             return pokemonList;
         }
     }
-    }
+}
 
 
 

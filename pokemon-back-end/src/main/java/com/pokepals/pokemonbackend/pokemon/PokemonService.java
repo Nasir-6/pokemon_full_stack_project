@@ -26,50 +26,63 @@ public class PokemonService {
 
 //    Pokemon getPokemonById(Integer id);
     public Pokemon getPokemonById(Integer id) {
-        if (id == null || id <= 0) {
-            throw new IllegalStateException("Invalid Pokemon ID");
+
+        if (id == null) {
+            throw new IllegalStateException("ID cannot be null");
+        } else if (id <= 0) {
+            throw new IllegalStateException("ID cannot be less than or equal to 0");
         }
+
         Pokemon pokemon = pokemonDAO.getPokemonById(id);
         if (pokemon == null) {
-            throw new IllegalStateException("No pokemon found");
+            throw new IllegalStateException("No pokemon found in DB");
         }
         // Return pokemon by ID
         return pokemon;
     }
 
-    private void checkPokemonProperties(Pokemon pokemon) {
-        if(pokemon.getId() <= 0) {
-            throw new IllegalStateException("Pokemon id cannot be less than or equal to 0");
-        }
-        if(pokemon.getTrainer_id() <= 0 ) {
+
+    private void checkPokemonInputs(Pokemon pokemon) {
+        if(pokemon.getTrainer_id() == null  ) {
+            throw new IllegalStateException("Trainer id cannot be null");
+
+        } else if(pokemon.getTrainer_id() <= 0 ) {
             throw new IllegalStateException("Trainer id cannot be less than or equal to 0");
-        }
-        if(pokemon.getName()== null ) {
+
+        } else if(pokemon.getName() == null ) {
             throw new IllegalStateException("Pokemon name can not be null");
-        }
-        if(pokemon.getPokeapi_id() <= 0) {
-            throw new IllegalStateException("Pokemon id cannot be less than or equal to 0");
-        }
-        if(pokemon.getSprite_link() == null) {
-            throw new IllegalStateException("Pokemon id cannot be less than or equal to 0");
-        }
-        if(pokemon.getHp () <= 0) {
-            throw new IllegalStateException("Pokemon id cannot be less than or equal to 0");
-        }
-        if(pokemon.getLevel () <= 0) {
-            throw new IllegalStateException("Pokemon id cannot be less than or equal to 0");
+
+        } else if(pokemon.getPokeapi_id() == null) {
+            throw new IllegalStateException("Pokemon API id cannot be null");
+
+        } else if(pokemon.getPokeapi_id() <= 0) {
+            throw new IllegalStateException("Pokemon API id cannot be less than or equal to 0");
+
+        } else if(pokemon.getSprite_link() == null) {
+            throw new IllegalStateException("Pokemon sprite Link cannot be less than or equal to 0");
+
+        } else if(pokemon.getHp () == null) {
+            throw new IllegalStateException("Pokemon Hp cannot be null");
+
+        }else if(pokemon.getHp () <= 0) {
+            throw new IllegalStateException("Pokemon Hp cannot be less than or equal to 0");
+
+        }else if(pokemon.getLevel () == null) {
+            throw new IllegalStateException("Pokemon level cannot be null");
+
+        } else if(pokemon.getLevel () <= 0) {
+            throw new IllegalStateException("Pokemon level cannot be less than or equal to 0");
         }
     }
 
     public int addPokemon (Pokemon pokemon) {
         //check if all value inputs are correct
-        checkPokemonProperties(pokemon);
-        //check if pokemon already exists or not
+        checkPokemonInputs(pokemon);
 
-        //Should be a specific value for when booking an important, maybe the method returns the number 1
-        // for a completed booking on the system
+        //NO need to check if pokemon already exists or not - as can catch more than one
+
+
         if (pokemonDAO.addPokemon(pokemon) != 1) {
-            //if it doesn't equal to one throw an exception, but keep the user in the loop to re-add the booking
             throw new IllegalStateException("Could not add pokemon");
         }
         else {
@@ -78,10 +91,15 @@ public class PokemonService {
     }
 
     public int deletePokemonById (Integer id) {
+        if (id == null) {
+            throw new IllegalStateException("ID cannot be null");
+        } else if (id <= 0) {
+            throw new IllegalStateException("ID cannot be less than or equal to 0");
+        }
 
         //check if PokemonById exists, so check if null
           if (pokemonDAO.getPokemonById(id) == null ) {
-              throw new IllegalStateException("Sorry Pokemon " + id + " could not be found");
+              throw new IllegalStateException("Sorry Pokemon with " + id + " could not be found in DB");
         }
         // otherwise delete Pokemon
         return pokemonDAO.deletePokemonById(id);
@@ -91,41 +109,19 @@ public class PokemonService {
        //List<Pokemon> getAllPokemonByTrainerId (Integer trainerId);
 
     public List <Pokemon> getAllPokemonByTrainerId (Integer trainerId) {
+
+        if (trainerId == null) {
+            throw new IllegalStateException("ID cannot be null");
+        } else if (trainerId <= 0) {
+            throw new IllegalStateException("ID cannot be less than or equal to 0");
+        }
+
         List<Pokemon> pokemonList = pokemonDAO.getAllPokemonByTrainerId(trainerId);
         if (pokemonList == null) {
-            throw new IllegalStateException("No pokemon found by trainer id ");
+            throw new IllegalStateException("No pokemon found in db for trainer with id " + trainerId);
         }
         return pokemonList;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// comments
-    //instance of the Pokemon DAO
-
-    //1. Get all Pokemons by Trainer Id
-    //Using a List
-    //length/size of list == 0 then no pokemons
-    //illegal state exception
-
-    //2. Add Pokemon
-    //if statement to check if the id is already in the database
-    // but if the exists - you already have this pokemon, don't catch!
-
-    //3. Delete Pokemons by Id
-//if statement - check if (PokemonDAO.selectPokemonById == null))
-    //exception - pokemon is not there
-    // else return the pokemon to be deleted (by Id)
 
 
     //4. Update Pokemon (Extension)
