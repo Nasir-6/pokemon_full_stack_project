@@ -18,13 +18,6 @@ public interface TrainerDAO {
 
 
 
-
-
-// TODO: 6. Delete Trainer (deleteTrainerById)
-// TODO: 1.Verification of Email
-// TODO: 2. Verification of Password
-
-
 //5. Update Trainer Email (?)
 //6. Update Trainer Password (?)
 

@@ -33,9 +33,11 @@ public class TrainerController {
         return trainerService.deleteTrainerById(id);
     }
 
+    @GetMapping(path = "trainer/login")
+    public Trainer getTrainerIfPasswordIsCorrect(@RequestBody Trainer trainerDetails){
+        return trainerService.getTrainerIfPasswordIsCorrect(trainerDetails);
+    }
 
-
-//    int deleteTrainerById(Integer id);
 //    //extension
 //    Trainer updateTrainer(Integer trainer_id, Trainer update)
 

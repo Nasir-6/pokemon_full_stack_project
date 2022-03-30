@@ -13,19 +13,18 @@ export default function WildPokemon() {
         .then(response => response.json())
         .then(onePokemon => onePokemon.sprites.front_default)
         setSpriteUrl(newSpriteUrl);
-
     }
 
     useEffect(()=>{
         grabPokemonSprite();
     },[wildPokemonId])
+    // Run above useEffect on mount aswell as when wildPokemonId changes state (i.e grabSprite when wildPokemonId change )
 
     // Function to generate wildPokemonId (between 1 and 493)
     const wildPokemonIdGenerator = () => {
 
         //generate probability 
         const wildPokemonProbability = Math.random();
-        console.log(wildPokemonProbability);
         if(wildPokemonProbability >= 0.6){
             // if more than 0.6 - set to found and also set id - 
             setFoundWildPokemon(true)
@@ -33,8 +32,6 @@ export default function WildPokemon() {
         } else if(wildPokemonProbability < 0.6){
             setFoundWildPokemon(false)
         }
-        
-        // else set found to false (used for conditional rendering)
         
     }
 

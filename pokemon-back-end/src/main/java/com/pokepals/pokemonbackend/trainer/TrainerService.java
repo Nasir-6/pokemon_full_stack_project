@@ -102,9 +102,31 @@ public class TrainerService {
     }
 
 
+    public Trainer getTrainerIfPasswordIsCorrect(Trainer trainerDetails){
+        if(trainerDetails.getEmail() == null){
+            throw new IllegalStateException("Email cannot be null");
+        } else if(trainerDetails.getPassword() == null){
+            throw new IllegalStateException("Password cannot be null");
+        }
+
+        // Use get TrainerBy Email here NO need for DAO
+        Trainer trainerInDbWithEmail = getTrainerByEmail(trainerDetails.getEmail());
+        if(trainerInDbWithEmail == null){
+            throw new IllegalStateException("Trainer with this email does not exist in the DB");
+        }
+        // Got someone with email - now check if the password matches
+        if (trainerInDbWithEmail.getPassword().equals(trainerDetails.getPassword())){
+            // Return the whole trainer, id, and all - so we can use as current user in the front-end
+            // (We don't want to have the password though!!!! - security issue!!)
+            return trainerInDbWithEmail;
+        }
+        // Else return null - IF NOT GETTING NULL - maybe returning 1 - bear that in mind
+        return null;
+    }
 
 
-//    int deleteTrainerById(Integer id);
+
+
 //    //extension
 //    Trainer updateTrainer(Integer trainer_id, Trainer update);
 
