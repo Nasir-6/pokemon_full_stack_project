@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import userSprite from '../images/ash_sprite.png'
+import Footer from '../containers/Footer';
 
 export default function Home() {
 
@@ -10,6 +11,7 @@ export default function Home() {
       <div className='userSprite'>
         <img src = {userSprite} alt = "User sprite"/>
       </div> 
+      
     </>
   );
 }
