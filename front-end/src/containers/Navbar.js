@@ -1,22 +1,18 @@
 import React from 'react'
 
+
 export default function Navbar() {
   return (
-    <div className= "navbar">
-    <div className="navbar-left">
-      logo
+    <div className="navbar">
+      <div className="navbar-left">
+        <p>Logo</p>
       </div>
-    <div className="navbar-right">
-      homepage button (className="button" )
 
-    {/* making login and signup button component */}
-   
-     <loginSignUp 
-     />
-     </div>
-    
+      <div className="navbar-right">
+        <button className="btn">Home</button>
+        <button className="btn">Login</button>
+        <button className='btn'>Sign up</button>
+      </div>
     </div>
-
-    
-  )
+  );
 }
