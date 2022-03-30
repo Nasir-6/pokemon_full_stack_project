@@ -80,8 +80,6 @@ public class PokemonService {
         checkPokemonInputs(pokemon);
 
         //NO need to check if pokemon already exists or not - as can catch more than one
-
-
         if (pokemonDAO.addPokemon(pokemon) != 1) {
             throw new IllegalStateException("Could not add pokemon");
         }
@@ -106,7 +104,6 @@ public class PokemonService {
     }
 
 
-       //List<Pokemon> getAllPokemonByTrainerId (Integer trainerId);
 
     public List <Pokemon> getAllPokemonByTrainerId (Integer trainerId) {
 
