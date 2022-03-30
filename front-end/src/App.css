@@ -15,6 +15,8 @@ RGB: (10 40 95)
 RGB: (251 27 27)
 RGB: (251 27 27)
 RGB: (223 223 223) */
+
+--grid-length: 10;
 }
 
 
@@ -104,6 +106,72 @@ RGB: (223 223 223) */
 
 
 /* Map Page */
+
+.map-page{
+  display: grid;
+  grid-template-areas: 
+  "grid grid moves"
+  "grid grid wildPokemon";
+  background-color: blue;
+  height: 80vh;
+  padding: 4rem;
+}
+
+.grid-container{
+  grid-area: grid;
+  background-color: #1C2541;
+  min-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-length), 1fr);
+  grid-template-rows: repeat(var(--grid-length), 1fr);
+}
+
+.oneGrid{
+  border: 1px red solid;
+}
+
+.user-grid{
+  background-image: url("./images/ash_sprite.png");
+  background-size: contain;
+}
+
+.moves-container{
+  grid-area: moves;
+  padding: 1rem;
+  display: grid;
+  grid-template-areas: 
+  ". up ."
+  "left user right"
+  ". down .";
+}
+
+.up-btn{
+  grid-area: up;
+}
+
+.right-btn{
+  grid-area: right;
+}
+
+.down-btn{
+  grid-area: down;
+}
+
+.left-btn{
+  grid-area: left;
+}
+
+.user-sprite{
+  grid-area: user;
+}
+
+.wild-pokemon-container{
+  grid-area: wildPokemon;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+
 
 
 
