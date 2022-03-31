@@ -8,9 +8,13 @@ import Map from './pages/Map';
 import Signup from './pages/Signup';
 import Pokedex from './pages/Pokedex';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { useState } from 'react';
 
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(null)
+
   return (
     <Router>
       <div className="bg-overlay">
