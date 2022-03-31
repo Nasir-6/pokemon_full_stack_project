@@ -7,19 +7,12 @@
   --off-red-color:rgb(227 53 13);
   --grey-color:rgb(223 223 223);
   --background-color: rgb(245 245 245);
+  --dark-background-color: rgb(130, 26, 17);
   /* --background-color: #daeaf7; */
   /* --background-color: rgb(253, 239, 184); */
   --primary-color: #eff0f0;
   --secondary-color: #eff0f0;
 
-
-
-  /* RGB: (255 204 0)
-RGB: (213 161 0)
-RGB: (0 117 190)
-RGB: (10 40 95)
-RGB: (251 27 27)
-RGB: (227 53 13) */
 
 --grid-length: 10;
 }
@@ -32,7 +25,7 @@ box-sizing: border-box;
 }
 
 #root{
-  background-color: rgb(130, 26, 17);
+  background-color: var(--dark-background-color);
   display: flex;
   justify-content: center;
 }
