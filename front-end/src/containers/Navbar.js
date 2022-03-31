@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import POKEPALS from '../images/POKEPALS.png';
 
 
 export default function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <p>Logo</p>
+        <p>
+        < img src = {POKEPALS} width="300px" height="100px" alt= "Logo"/>
+
+        </p>
       </div>
 
       <div className="navbar-right">
