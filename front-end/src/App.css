@@ -27,7 +27,7 @@ box-sizing: border-box;
   justify-content: center;
 }
 
-.bg-overlay{
+.background-overlay{
   width: 100%;
   display: flex;
   justify-content: center;
@@ -99,7 +99,8 @@ a{
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 .btn:active{
-  background-color: rgb(0 117 190);
+  background-color: var(--dark-color);
+  color: white;
   box-shadow: 5px;
   transform: translate(4px);
 }
@@ -172,7 +173,7 @@ a:hover .social-icon{
 }
 
 
-/* Home Page CSS */
+/* =============== Home Page CSS ================ */
 
 
 
@@ -214,16 +215,18 @@ input {
 
 }
 		
-		.inputs:hover{
-			background-color: var(--logo-color);
-		 
-      border-color: black;
-      
-    }
-		
-		
-	
-	
+.inputs:hover{
+  background-color: var(--logo-color);
+  border-color: black;
+}
+
+
+.invalidText{
+  color: red;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 1rem;
+}
 
 
 
