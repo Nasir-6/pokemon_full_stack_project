@@ -263,7 +263,7 @@ ul li:nth-child(3) a:hover .social-icon {
 
 .user-grid{
   background-image: url("./images/ash_sprite.png");
-  background-size: contain;
+  background-size: cover;
 }
 
 .moves-container{
