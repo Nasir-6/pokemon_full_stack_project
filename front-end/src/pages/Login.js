@@ -10,9 +10,9 @@ export default function Login() {
 
       <input type="text"  className="inputs" placeholder="Enter password"></input>
 
-      </form>
+      <input type="submit" name="login" id="login-btn" className='btn'/>
 
-      <button>Login</button>
+      </form>
 
       <img src="" alt="" />
 
