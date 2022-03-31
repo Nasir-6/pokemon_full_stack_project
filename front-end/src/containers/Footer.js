@@ -16,7 +16,7 @@ const Footer = () => {
         <footer className="footer-container">
 
           
-
+c
             <img className="footer-logo" src={POKEPALS} alt="pokepals logo"></img>
             
             <div className="footer-middle">

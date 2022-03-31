@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Map() {
   const [userPosition, setUserPostion] = useState(6);
-
+//lesson on useState 
   let gridIndexes = [];
   const GRIDLENGTH = 10;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
