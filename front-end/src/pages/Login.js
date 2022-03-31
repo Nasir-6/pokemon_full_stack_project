@@ -2,6 +2,15 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <div>Login</div>
+    <div className='login-page'>
+      <h1>Login</h1>
+      <form action="" className='login-form'>
+
+
+      </form>
+
+      <img src="" alt="" />
+
+    </div>
   )
 }
