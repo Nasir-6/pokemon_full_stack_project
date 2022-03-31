@@ -26,8 +26,7 @@ const Footer = () => {
             </ul>
             </div>
             <div className="footer-right">
-              <p>Copyright</p>
-              <span className="copyright-symbol">©</span>
+              <p>Copyright © 2022 PokePals, All rights reserved.</p>
             </div>
                 
         </footer> 
