@@ -9,7 +9,7 @@
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
   
-  --grid-length: 10;
+  --grid-length: 25;
 }
 
 
@@ -239,6 +239,10 @@ a:hover .social-icon{
 .grid-container{
   grid-area: grid;
   background-color: #1C2541;
+  /* background-image: url("./images/map.jpeg"); */
+  background-image: url("./images/map_iain.png");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
   min-width: 400px;
   display: grid;
   grid-template-columns: repeat(var(--grid-length), 1fr);
@@ -246,7 +250,7 @@ a:hover .social-icon{
 }
 
 .oneGrid{
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 .user-grid{

@@ -8,7 +8,7 @@ export default function Map() {
 
   let gridIndexes = []; 
   // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
-  const GRIDLENGTH = 10;
+  const GRIDLENGTH = 25;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
     gridIndexes.push(i);
   }
