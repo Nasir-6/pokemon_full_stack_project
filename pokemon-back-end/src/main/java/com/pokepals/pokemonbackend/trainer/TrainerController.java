@@ -33,7 +33,7 @@ public class TrainerController {
         return trainerService.deleteTrainerById(id);
     }
 
-    @GetMapping(path = "trainer/login")
+    @PostMapping(path = "trainer/login")
     public Trainer getTrainerIfPasswordIsCorrect(@RequestBody Trainer trainerDetails){
         return trainerService.getTrainerIfPasswordIsCorrect(trainerDetails);
     }
