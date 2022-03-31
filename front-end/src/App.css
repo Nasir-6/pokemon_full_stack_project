@@ -8,13 +8,8 @@
   --grey-color:rgb(223 223 223);
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
-  /* --background-color: #daeaf7; */
-  /* --background-color: rgb(253, 239, 184); */
-  --primary-color: #eff0f0;
-  --secondary-color: #eff0f0;
-
-
---grid-length: 10;
+  
+  --grid-length: 10;
 }
 
 
@@ -25,9 +20,18 @@ box-sizing: border-box;
 }
 
 #root{
-  background-color: var(--dark-background-color);
+  /* background-color: var(--dark-background-color); */
+  background-image: url("./images/background.png");
+  background-size: contain;
   display: flex;
   justify-content: center;
+}
+
+.bg-overlay{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.3);
 }
 
 
@@ -35,14 +39,8 @@ box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* text-align: center; */
   width: 75%;
-
 }
-
-/* .userSprite {
-  background-color: red;
-} */
 
 
 
@@ -68,24 +66,33 @@ display:flex;
 /* to add space between the buttons */
 column-gap: 20px;
 /* we used padding here to move the buttons to the left */
-padding-right:150px; 
+/* padding-right:150px;  */
 }
 
+
+/* Responsive design */
+/* Default html font-size is 16px */
+/* rem is 16px * value
+1.5 rem = 16 * 1.5 = 24px
+So for responive design */
 .btn {
-  
-  /* background-color:var(--blue-color1); */
   background-color:var(--dark-color);
   color: white;
   border: none;
-  padding: 15px;
+  padding: 0.8rem;
   text-align: center;
-  font-size: 20px;
-  border-radius: 8px;
-  margin: 2px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition-duration: 0.25s;
-  
+  border: 1px var(--logo-color) solid;
 } 
+
+a{
+  text-decoration: none;
+}
+
+
 .btn:hover{
   background-color: var(--logo-color);
   color: var(--dark-color);
@@ -121,79 +128,49 @@ padding-right:150px;
   width: 7rem; 
 }
 
-.footer-middle {
-  jusitify-self: center;
-}
+/* .footer-middle {
+  justify-self: center;
+} */
 
 .footer-right {
   display: flex;
   height: 2rem;
   align-items: center;
   color: white;
-
-  
-
 }
 
 
 
-ul {
-  display:flex;
+.footer-middle {
+  justify-self: flex-start;
+  display: flex;
 }
 
-ul li {
-  list-style: none;
-}
 
-ul li a {
+.footer-middle a {
+  color: white;
   width:40px;
   height:40px;
-  display:block;
-  text-align:center;
-  margin:0 10px;
-  border-radius: 50%;
-  padding: 6px;
-  text-decoration:none;
-  /* box-shadow: 0 10px 15px rgba(0,0,0,0.3); */
-  background: linear-gradient(0deg, #ddd, #fff);
+  padding: 5px;
   background: var(--dark-color);
   transition: .5s;
 }
 
-ul li a:hover {
+/* a:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  text-decoration:none;
-}
+} */
 
-ul li a .social-icon {
+a .social-icon {
   height:100%;
-  background: linear-gradient(0deg, #fff, #ddd);
   background: var(--dark-color);
-  border-radius: 50%;
-  color: #262626;
   color: white;
   transition: .5s;
 }
 
-ul li:nth-child(1) a:hover .social-icon {
-  /* color: #3b5998; */
-  color: var(--logo-color);
-  
-}
-
-ul li:nth-child(2) a:hover .social-icon {
-  /* color: #00aced; */
+a:hover .social-icon{
   color: var(--logo-color);
 }
 
-ul li:nth-child(3) a:hover .social-icon {
-  /* color: #e4405f; */
-  color: var(--logo-color);
-}
-
-.facebook {
-  background-color: black;
-}
 
 /* Home Page CSS */
 
@@ -253,10 +230,10 @@ ul li:nth-child(3) a:hover .social-icon {
   grid-template-areas: 
   "grid grid moves"
   "grid grid wildPokemon";
-  background-color: var(--color1);
   background-color: var(--background-color);
   height: 80vh;
   padding: 4rem;
+  width: 100%;
 }
 
 .grid-container{

@@ -13,20 +13,20 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div className="bg-overlay">
+        <div className="app">
+          <Navbar />
 
-        <Navbar/>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/map" element={<Map />} />
+            <Route exact path="/pokedex" element={<Pokedex />} />
+          </Routes>
 
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route exact path="/login" element={<Login/>}/>
-          <Route exact path="/signup" element={<Signup/>} />
-          <Route exact path="/map" element={<Map/>} />
-          <Route exact path="/pokedex" element={<Pokedex/>} />
-        </Routes>
-
-        <Footer/>
-
+          <Footer />
+        </div>
       </div>
     </Router>
   );

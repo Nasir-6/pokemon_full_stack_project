@@ -19,14 +19,12 @@ const Footer = () => {
             <img className="footer-logo" src={POKEPALS} alt="pokepals logo"></img>
             
             <div className="footer-middle">
-            <ul>
-              <li><a href="#">< FontAwesomeIcon icon={faFacebook} className="social-icon"/></a></li>
-              <li><a href="#">< FontAwesomeIcon icon={faTwitter} className="social-icon" /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faInstagram} className="social-icon"/></a></li>
-            </ul>
+              <a href="#">< FontAwesomeIcon icon={faFacebook} className="social-icon"/></a>
+              <a href="#">< FontAwesomeIcon icon={faTwitter} className="social-icon" /></a>
+              <a href="#"><FontAwesomeIcon icon={faInstagram} className="social-icon"/></a>
             </div>
             <div className="footer-right">
-              <p>Copyright © 2022 PokePals, All rights reserved.</p>
+              <p>Copyright © 2022 PokePals</p>
             </div>
                 
         </footer> 
