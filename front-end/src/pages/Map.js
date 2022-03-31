@@ -30,7 +30,6 @@ export default function Map() {
   }
 
   const moveLeft = () => {
-
     const isOnLeftEdge = (userPosition%GRIDLENGTH == 1)
     if(!isOnLeftEdge){
       setUserPostion(userPosition-1)
@@ -58,12 +57,6 @@ export default function Map() {
     }
     
   }
-
-
-
-
-
-
 
 
 
