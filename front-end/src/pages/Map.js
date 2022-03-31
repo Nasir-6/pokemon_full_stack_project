@@ -4,13 +4,20 @@ import userSprite from "../images/ash_sprite.png";
 import { useEffect, useState } from "react";
 
 export default function Map() {
-  const [userPosition, setUserPostion] = useState(6);
+  const [userPosition, setUserPostion] = useState(10);
 
-  let gridIndexes = [];
+  let gridIndexes = []; 
+  // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
   const GRIDLENGTH = 10;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
     gridIndexes.push(i);
   }
+
+
+  // UseEffect for running ilPokenmonID - when userPosition changes 
+  useEffect(()=>{
+    console.log("userPosition changed")
+  }, [userPosition])
 
   const grids = gridIndexes.map((index) => {
     if (index == userPosition) {
@@ -63,7 +70,9 @@ export default function Map() {
 
   return (
     <div className="map-page">
-      <div className="grid-container">{grids}</div>
+      <div className="grid-container">
+        {grids}
+      </div>
 
       <div className="moves-container">
         <button className="btn up-btn" onClick={moveUp}>Up</button>
