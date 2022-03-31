@@ -9,7 +9,7 @@
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
   
-  --grid-length: 25;
+  --grid-length: 10;
 }
 
 
@@ -290,7 +290,7 @@ input {
 }
 
 .oneGrid{
-  /* border: 1px red solid; */
+  border: 1px red solid;
 }
 
 .user-grid{

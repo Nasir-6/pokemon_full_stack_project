@@ -8,20 +8,21 @@ export default function Map() {
 
   let gridIndexes = []; 
   // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
-  const GRIDLENGTH = 25;
+  const GRIDLENGTH = 10;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
     gridIndexes.push(i);
   }
 
   const grids = gridIndexes.map((index) => {
     if (index == userPosition) {
-      return <div className={`oneGrid grid-${index} user-grid`}></div>;
+      return <div className={`oneGrid user-grid`}></div>;
     } else {
-      return <div className={`oneGrid grid-${index}`}></div>;
+      return <div className={`oneGrid`}></div>;
     }
   });
 
   const moveRight = () => {
+    
     const isOnRightEdge = (userPosition%GRIDLENGTH == 0)
     if(!isOnRightEdge){
       setUserPostion(userPosition+1)
@@ -50,7 +51,7 @@ export default function Map() {
   }
 
   const moveDown = () => {
-    const isOnBottomEdge = (userPosition>(GRIDLENGTH*(GRIDLENGTH-1)) && userPosition<=GRIDLENGTH**22)
+    const isOnBottomEdge = (userPosition>(GRIDLENGTH*(GRIDLENGTH-1)) && userPosition<=GRIDLENGTH**2)
     if(!isOnBottomEdge){
       setUserPostion(userPosition+GRIDLENGTH)
     } else{
@@ -99,7 +100,6 @@ export default function Map() {
 
 
   useEffect(()=>{
-    console.log("userPosition changed")
     wildPokemonIdGenerator();
   }, [userPosition])
 
