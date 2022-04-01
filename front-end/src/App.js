@@ -17,14 +17,15 @@ function App() {
 
   //Store the currentUser in sessionStorage everytime it changes
   useEffect(()=>{
-    // What about when you logout how do you deal with this!!!!
+    // If statement prevents overwriting the sessionStorage on refresh with empty string ""
+    // whilst also allowing logged out (null user) information to be stored in sessionStorage
+    // Keeping track of both logged in/out user states
     if(currentUser != ""){
       sessionStorage.setItem("currentUser", JSON.stringify(currentUser))
     }
   }, [currentUser])
 
-
-
+  
   // On mount (when Refreshed) retrieve the currentUser stored in sessionStorage 
   useEffect(()=>{
     // First grab from sessionStorage - Parse into a object as stored as a string in sessionStorage
