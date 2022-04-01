@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function Pokedex() {
+export default function Pokedex({currentUser}) {
+
+  console.log(currentUser.id)
   return (
     <>
     <h2>Manage your pokémon team</h2>
