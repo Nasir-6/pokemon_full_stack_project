@@ -14,8 +14,10 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.BDDMockito.given;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 class PokemonServiceTest {
@@ -47,22 +49,29 @@ class PokemonServiceTest {
     }
 
     @Test
+    void canThrowWhenPokemonDbIsEmpty() {
+        // Given
+        given(pokemonDAO.getAllPokemon()).willReturn(null);
+        // When
+        assertThatThrownBy(() -> underTest.getAllPokemon())
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessageContaining("No pokemon found");
+        // Then
+        // verify(pokemonDAO, never()).getAllPokemon();
+    }
+
+    @Test
     void canGetPokemonById() {
         // Given
-        Pokemon testPokemon1 = new Pokemon(1, 1, "pokemon1", 1, "https://pokemon/1.png", 100, 5);
-        Pokemon testPokemon2 = new Pokemon(2, 1, "pokemon2", 4, "https://pokemon/4.png", 85, 4);
-        Pokemon testPokemon3 = new Pokemon(3, 2, "pokemon3", 5, "https://pokemon/5.png", 123, 7);
-        List<Pokemon> allPokemonById = new ArrayList<>();
-        allPokemonById.add(testPokemon1);
-        allPokemonById.add(testPokemon2);
-        allPokemonById.add(testPokemon3);
-        given(pokemonDAO.getPokemonById(2)).willReturn(testPokemon2);
+        Pokemon testPokemon = new Pokemon(1, 1, "pokemon1", 1, "https://pokemon/1.png", 100, 5);
+        given(pokemonDAO.getPokemonById(1)).willReturn(testPokemon);
         // When
-        Pokemon actual = underTest.getPokemonById(2);
+        Pokemon actual = underTest.getPokemonById(1);
         // Then
-        Pokemon expected = testPokemon2;
+        Pokemon expected = testPokemon;
         assertThat(actual).isEqualTo(expected);
     }
+    // Test all getPokemonById scenarios here ^
 
     @Test
     void canAddPokemon() {
@@ -80,8 +89,8 @@ class PokemonServiceTest {
     void canDeletePokemonById() {
         // Given
         int id = 1;
-        Pokemon testPokemon = new Pokemon(1, 1, "pokemon1", 1, "https://pokemon/1.png", 100, 5);
-        given(pokemonDAO.deletePokemonById(id)).willReturn(0);
+        Pokemon testPokemon = new Pokemon(id, 1, "pokemon1", 1, "https://pokemon/1.png", 100, 5);
+        given(pokemonDAO.deletePokemonById(id)).willReturn(1);
         given(pokemonDAO.getPokemonById(id)).willReturn(testPokemon);
         // When
         int actual = underTest.deletePokemonById(id);
@@ -90,10 +99,11 @@ class PokemonServiceTest {
         Integer expected = pokemonArgumentCaptor.getValue();
         // Then
         assertThat(expected).isEqualTo(id);
-        assertThat(actual).isEqualTo(0);
+        assertThat(actual).isEqualTo(expected);
     }
 
 //    @Test
 //    void getAllPokemonByTrainerId() {
 //    }
+
 }

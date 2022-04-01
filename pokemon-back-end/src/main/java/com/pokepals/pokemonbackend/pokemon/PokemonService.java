@@ -78,14 +78,12 @@ public class PokemonService {
     public int addPokemon (Pokemon pokemon) {
         //check if all value inputs are correct
         checkPokemonInputs(pokemon);
-
+        int result = pokemonDAO.addPokemon(pokemon);
         //NO need to check if pokemon already exists or not - as can catch more than one
-        if (pokemonDAO.addPokemon(pokemon) != 1) {
+        if (result != 1) {
             throw new IllegalStateException("Could not add pokemon");
         }
-        else {
-            return 1;
-        }
+        return result;
     }
 
     public int deletePokemonById (Integer id) {
@@ -96,11 +94,17 @@ public class PokemonService {
         }
 
         //check if PokemonById exists, so check if null
-          if (pokemonDAO.getPokemonById(id) == null ) {
+        Pokemon pokemonInDb = pokemonDAO.getPokemonById(id);
+          if (pokemonInDb == null ) {
               throw new IllegalStateException("Sorry Pokemon with " + id + " could not be found in DB");
         }
         // otherwise delete Pokemon
-        return pokemonDAO.deletePokemonById(id);
+        int result = pokemonDAO.deletePokemonById(id);
+        //NO need to check if pokemon already exists or not - as can catch more than one
+        if (result != 1) {
+            throw new IllegalStateException("Could not delete pokemon");
+        }
+        return result;
     }
 
 
