@@ -8,7 +8,7 @@ export default function Navbar() {
     <div className="navbar">
       <div className="navbar-left">
         <p>
-        < img src = {POKEPALS} width="auto" height="65px" alt= "Logo"/>
+        <a href='./'>< img src = {POKEPALS} width="auto" height="65px" alt= "Logo"/></a>
         </p>
       </div>
       <div className="navbar-right">
