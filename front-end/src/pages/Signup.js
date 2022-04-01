@@ -1,6 +1,5 @@
 import React from 'react';
-import squirtle from '../images/squirtle.png';
-
+import charmander from '../images/charmander.png';
 
 
 //may need to change classNames to increase sizing of boxes or just one part?
@@ -22,7 +21,7 @@ export default function Signup() {
       <input type="submit" name="login" id="login-btn" className='btn'/>
       </form>
 
-      <img src={squirtle} alt="spurtle image" />
+      <img src={charmander} alt="charmander image" />
 
     </div>
     </>
