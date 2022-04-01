@@ -1,6 +1,10 @@
 import React from "react";
 import userSprite from "../images/ash_sprite.png";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+
+
 
 export default function Map() {
 
@@ -117,10 +121,11 @@ export default function Map() {
       </div>
 
       <div className="moves-container">
-        <button className="btn up-btn" onClick={moveUp}>Up</button>
-        <button className="btn right-btn" onClick={moveRight}>Right</button>
-        <button className="btn down-btn" onClick={moveDown}>Down</button>
-        <button className="btn left-btn" onClick={moveLeft}>Left</button>
+        
+        <FontAwesomeIcon icon={faArrowUp} onClick={moveUp} className="btn up-btn"/> 
+        <FontAwesomeIcon icon={faArrowRight} onClick={moveRight} className="btn right-btn"/> 
+        <FontAwesomeIcon icon={faArrowDown} onClick={moveDown} className="btn down-btn"/> 
+        <FontAwesomeIcon icon={faArrowLeft} onClick={moveLeft} className="btn left-btn"/> 
         <img src={userSprite} alt="User sprite" className="user-sprite" />
       </div>
 
