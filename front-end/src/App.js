@@ -33,6 +33,10 @@ function App() {
     setCurrentUser(currentUserInSessionStorage)
   }, [])
 
+  const logout = () => {
+    setCurrentUser(null)
+  }
+
 
 
 
@@ -42,6 +46,7 @@ function App() {
       <div className="background-overlay">
         <div className="app">
           <Navbar />
+          <button className='btn' onClick={logout}>Logout</button>
 
           <Routes>
             <Route exact path="/" element={<Home />} />
