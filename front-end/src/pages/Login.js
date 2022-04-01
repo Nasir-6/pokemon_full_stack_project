@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import squirtle from '../images/squirtle.png';
+
 
 export default function Login({updateCurrentUser}) {
 
@@ -76,13 +78,14 @@ export default function Login({updateCurrentUser}) {
       <h1>Login</h1>
 
       <form  action="post" className='login-form' onSubmit={handleSubmitButton}>
-      <input type="text"  className="inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
-      <input type="password"  className="inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
+      <input type="text"  className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
+      <input type="password"  className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
       <p className="invalidText">{invalidInputWarning}</p>
       <input type="submit" name="login" id="login-btn" className='btn'/>
       </form>
 
-      <img src="" alt="" />
+      <img src={squirtle} alt="spurtle image" />
+
 
     </div>
   )

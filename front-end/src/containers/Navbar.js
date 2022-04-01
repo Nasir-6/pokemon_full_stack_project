@@ -9,10 +9,8 @@ export default function Navbar() {
       <div className="navbar-left">
         <p>
         < img src = {POKEPALS} width="auto" height="65px" alt= "Logo"/>
-
         </p>
       </div>
-
       <div className="navbar-right">
         <Link to="/" className="btn">Home</Link>
         <Link to="/login" className="btn">Login</Link>

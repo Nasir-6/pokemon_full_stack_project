@@ -31,7 +31,7 @@ box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgb(210, 204, 204);
 }
 
 
@@ -40,11 +40,15 @@ box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   width: 75%;
+  background-color: white;
 }
 
+h1 {
+  text-align: center;
+  padding: 10px;
+}
 
-
-/* Navbar CSS */
+/* =============== Navbar CSS  ================ */
 .navbar {
 display:flex;
 justify-content: space-between;
@@ -79,7 +83,7 @@ So for responive design */
   background-color:var(--dark-color);
   color: white;
   border: none;
-  padding: 0.8rem;
+  padding: 0.9rem;
   text-align: center;
   font-size: 1rem;
   border-radius: 0.5rem;
@@ -114,7 +118,8 @@ a{
 
 
 
-/* Footer CSS */
+/* =============== Footer CSS  ================ */
+
 
 .footer-container {
   display: flex;
@@ -141,7 +146,6 @@ a{
 }
 
 
-
 .footer-middle {
   justify-self: flex-start;
   display: flex;
@@ -157,9 +161,6 @@ a{
   transition: .5s;
 }
 
-/* a:hover {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-} */
 
 a .social-icon {
   height:100%;
@@ -186,7 +187,7 @@ a:hover .social-icon{
 
 
 
-/* Login Page */
+/* =============== Login page   ================ */
 
 
 
@@ -215,7 +216,7 @@ input {
 
 }
 		
-.inputs:hover{
+.login-inputs:hover{
   background-color: var(--logo-color);
   border-color: black;
 }
@@ -240,7 +241,46 @@ input {
 
 
 
-/* Signup Page */
+/* =============== Signup page  ================ */
+.signup-form{
+	padding: 20px 0;
+	position: relative;
+	z-index: 2;
+
+}
+	
+input {
+		display: block;
+		border: 1px solid black;
+		background-color:rgb(255, 226, 109);
+		width: 350px;
+		border-radius: 8px;
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		text-align: center;
+		font-size: 18px;
+				
+		transition-duration: 0.25s;
+		font-weight: 300;
+    color: black;
+
+}
+		
+.signup-inputs:hover{
+  background-color: var(--logo-color);
+  border-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+/* =============== Pokedex page  ================ */
 
 
 
@@ -252,19 +292,7 @@ input {
 
 
 
-/* Pokedex Page */
-
-
-
-
-
-
-
-
-
-
-
-/* Map Page */
+/* =============== Map page  ================ */
 
 .map-page{
   display: grid;
