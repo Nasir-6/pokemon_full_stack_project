@@ -81,7 +81,7 @@ export default function Login({updateCurrentUser}) {
       <input type="text"  className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
       <input type="password"  className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
       <p className="invalidText">{invalidInputWarning}</p>
-      <input type="submit" name="login" id="login-btn" className='btn'/>
+      <input type="submit" name="login" id="login-btn" className='btn login-submit-btn' value="Login"/>
       </form>
 
       <img src={squirtle} alt="spurtle image" />

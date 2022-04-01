@@ -87,7 +87,7 @@ So for responive design */
   border: none;
   padding: 0.9rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-radius: 0.5rem;
   cursor: pointer;
   transition-duration: 0.25s;
@@ -254,12 +254,15 @@ input {
 		transition-duration: 0.25s;
 		font-weight: 300;
     color: black;
-
 }
 		
 .login-inputs:hover{
   background-color: var(--logo-color);
   border-color: black;
+}
+
+.login-submit-btn{
+  width: 150px;
 }
 
 .invalidText{
@@ -283,22 +286,14 @@ input {
 	z-index: 2;
 
 }
-	
-input {
-		display: block;
-		border: 1px solid black;
-		background-color:rgb(255, 226, 109);
-		width: 350px;
-		border-radius: 8px;
-		padding: 10px 15px;
-		margin: 0 auto 10px auto;
-		text-align: center;
-		font-size: 18px;
-				
-		transition-duration: 0.25s;
-		font-weight: 300;
-    color: black;
 
+
+.signup-inputs {
+  width: 350px;
+}
+
+.signup-submit-btn{
+  width: 150px;
 }
 		
 .signup-inputs:hover{
