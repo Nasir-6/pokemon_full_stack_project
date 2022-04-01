@@ -25,7 +25,7 @@ function App() {
     }
   }, [currentUser])
 
-  
+
   // On mount (when Refreshed) retrieve the currentUser stored in sessionStorage 
   useEffect(()=>{
     // First grab from sessionStorage - Parse into a object as stored as a string in sessionStorage
@@ -34,11 +34,6 @@ function App() {
     setCurrentUser(currentUserInSessionStorage)
   }, [])
 
-  const logout = () => {
-    setCurrentUser(null)
-  }
-
-
 
 
 
@@ -46,8 +41,8 @@ function App() {
     <Router>
       <div className="background-overlay">
         <div className="app">
-          <Navbar />
-          <button className='btn' onClick={logout}>Logout</button>
+          <Navbar currentUser={currentUser} updateCurrentUser={(update)=> setCurrentUser(update)}/>
+          
 
           <Routes>
             <Route exact path="/" element={<Home />} />
