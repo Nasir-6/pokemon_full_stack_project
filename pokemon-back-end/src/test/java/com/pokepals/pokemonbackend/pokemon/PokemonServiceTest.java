@@ -90,16 +90,18 @@ class PokemonServiceTest {
         // Given
         int id = 1;
         Pokemon testPokemon = new Pokemon(id, 1, "pokemon1", 1, "https://pokemon/1.png", 100, 5);
-        given(pokemonDAO.deletePokemonById(id)).willReturn(1);
+
+        // This will ensure pokemonInDb is not null
         given(pokemonDAO.getPokemonById(id)).willReturn(testPokemon);
+        // This one will mock the deletPersonById to return 1 ONLY when passing in id of 1
+        // (so if id changes to something else it will return null by default)
+        given(pokemonDAO.deletePokemonById(id)).willReturn(1);
         // When
         int actual = underTest.deletePokemonById(id);
-        ArgumentCaptor<Integer> pokemonArgumentCaptor = ArgumentCaptor.forClass(Integer.class);
-        verify(pokemonDAO).deletePokemonById(pokemonArgumentCaptor.capture());
-        Integer expected = pokemonArgumentCaptor.getValue();
         // Then
-        assertThat(expected).isEqualTo(id);
+        int expected = 1;
         assertThat(actual).isEqualTo(expected);
+
     }
 
 //    @Test
