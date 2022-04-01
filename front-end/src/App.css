@@ -191,9 +191,11 @@ padding: 20px;
 margin-top: 40px;
 font-size: 50px;
 position: absolute;
+transition: all .2s ease-in;
 
 
 }
+
 
 .home-text{
   position: absolute;
@@ -203,6 +205,27 @@ position: absolute;
 .home_background {
   width: 100%;
   height: 100%;
+
+}
+
+
+.home-btn {
+  position:absolute;
+  /* border: none; */
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: var(--dark-color);
+  color: white;
+  transition: all .3s;
+
+}
+
+.home-btn:hover{
+  background-color: grey;
+  border:none;
 
 }
 
