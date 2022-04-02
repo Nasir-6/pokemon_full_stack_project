@@ -312,10 +312,57 @@ input {
 
 /* =============== Pokedex page  ================ */
 
+.all-pokemon-container {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.pokemonCard {
+  /* background-color: transparent; */
+  background-color: rgb(206, 220, 234);
+  color: darkslategrey;
+  width: 250px;
+  height: 300px;
+  font-family: sans-serif;
+  margin: 2rem;
+  /* padding: 5%; */
+  padding: 5% 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(100, 100, 100, 0.7);
+}
 
+/* .card-title {
+  font-weight: bolder;
+} */
 
+.card-img-container {
+  width: 8rem;
+  height: 8rem;
+  /* background-color: #ffeec5; */
+  background-color: rgb(255, 238, 197, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
 
+/* .pokemon-sprite {
+  height: 150%;
+} */
+
+.card-img-container img {
+  width:150px;
+  object-fit: contain;
+}
 
 
 

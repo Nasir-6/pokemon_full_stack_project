@@ -32,15 +32,13 @@ key={pokemon.id}/>
 })
 
 
-
-
   return (
     <div className="pokedex-page">
     <h2>Manage your pokémon team</h2>
     <h3>{`Hi ${currentUser.name}`}</h3>
     <div>Pokedex</div>
 
-    <div className="all-pokemon-container">
+      <div className="all-pokemon-container">
       {/* pokemonList has the list of pokemon */}
       {pokemonList}
       </div>
