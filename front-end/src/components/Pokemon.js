@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-//passing in the single pokemon as a prop
+// Passing in the single pokemon as a prop
 export const Pokemon = ({pokemon}) => {
   return (
     <div className="pokemonCard">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import userSprite from '../images/ash_sprite.png'
+import userSprite from '../images/ashSprite.png'
 import Footer from '../containers/Footer';
 import home from '../images/home.jpeg';
 import home_background from '../images/home_background.webp'

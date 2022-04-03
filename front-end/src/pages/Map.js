@@ -1,5 +1,5 @@
 import React from "react";
-import userSprite from "../images/ash_sprite.png";
+import userSprite from "../images/ashSprite.png";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";

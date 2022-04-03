@@ -1,4 +1,4 @@
-:root{
+:root {
   --logo-color: rgb(255 204 0);
   --dark-yellow-color: rgb(213 161 0);
   --blue-color1: rgb(0 117 190);
@@ -12,16 +12,15 @@
   --grid-length: 10;
 }
 
-
-*{
+* {
 padding: 0px;
 margin: 0px;
 box-sizing: border-box;
 font-family: 'M PLUS Rounded 1c', sans-serif;
-font-family: 'Roboto', sans-serif;
+/* font-family: 'Roboto', sans-serif; */
 }
 
-#root{
+#root {
   /* background-color: var(--dark-background-color); */
   /* background-image: url("./images/background.png"); */
   background-size: contain;
@@ -36,7 +35,6 @@ font-family: 'Roboto', sans-serif;
   background-color: rgb(210, 204, 204);
 }
 
-
 .app {
   display: flex;
   flex-direction: column;
@@ -50,7 +48,10 @@ h1 {
   padding: 10px;
 }
 
-/* =============== Navbar CSS  ================ */
+
+
+/* =============== NAVBAR CSS ================ */
+
 .navbar {
 display:flex;
 justify-content: space-between;
@@ -59,7 +60,6 @@ background-color:var(--dark-color);
 width: 100%;
 padding: 1rem;
 }
-
 
 .navbar-left {
 display:flex;
@@ -74,7 +74,6 @@ column-gap: 20px;
 /* we used padding here to move the buttons to the left */
 /* padding-right:150px;  */
 }
-
 
 /* Responsive design */
 /* Default html font-size is 16px */
@@ -94,17 +93,17 @@ So for responive design */
   border: 1px var(--logo-color) solid;
 } 
 
-a{
+a {
   text-decoration: none;
 }
 
-
-.btn:hover{
+.btn:hover {
   background-color: var(--logo-color);
   color: var(--dark-color);
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
-.btn:active{
+
+.btn:active {
   background-color: var(--dark-color);
   color: white;
   box-shadow: 5px;
@@ -113,15 +112,7 @@ a{
 
 
 
-
-
-
-
-
-
-
-/* =============== Footer CSS  ================ */
-
+/* =============== FOOTER ================ */
 
 .footer-container {
   display: flex;
@@ -147,12 +138,10 @@ a{
   color: white;
 }
 
-
 .footer-middle {
   justify-self: flex-start;
   display: flex;
 }
-
 
 .footer-middle a {
   color: white;
@@ -162,7 +151,6 @@ a{
   background: var(--dark-color);
   transition: .5s;
 }
-
 
 a .social-icon {
   height:100%;
@@ -176,28 +164,22 @@ a:hover .social-icon{
 }
 
 
-/* =============== Home Page CSS ================ */
 
-
-
-
+/* =============== HOME PAGE ================ */
 
 .home-container {
   position:relative;
 }
 
-.home-title{
+.home-title {
 padding: 20px;
 margin-top: 40px;
 font-size: 50px;
 position: absolute;
 transition: all .2s ease-in;
-
-
 }
 
-
-.home-text{
+.home-text {
   position: absolute;
   margin: 200px;
 }
@@ -205,9 +187,7 @@ transition: all .2s ease-in;
 .home_background {
   width: 100%;
   height: 100%;
-
 }
-
 
 .home-btn {
   position:absolute;
@@ -220,23 +200,21 @@ transition: all .2s ease-in;
   background-color: var(--dark-color);
   color: white;
   transition: all .3s;
-
 }
 
-.home-btn:hover{
+.home-btn:hover {
   background-color: grey;
   border:none;
-
 }
 
 
 
-/* =============== Login page   ================ */
-.login-form{
+/* =============== LOGIN PAGE ================ */
+
+.login-form {
 	padding: 20px 0;
 	position: relative;
 	z-index: 2;
-
 }
 	
 input {
@@ -256,16 +234,16 @@ input {
     color: black;
 }
 		
-.login-inputs:hover{
+.login-inputs:hover {
   background-color: var(--logo-color);
   border-color: black;
 }
 
-.login-submit-btn{
+.login-submit-btn {
   width: 150px;
 }
 
-.invalidText{
+.invalidText {
   color: red;
   font-weight: 600;
   text-align: center;
@@ -274,43 +252,38 @@ input {
 
 
 
+/* =============== SIGN-UP PAGE ================ */
 
-
-
-
-
-/* =============== Signup page  ================ */
-.signup-form{
+.signup-form {
 	padding: 20px 0;
 	position: relative;
 	z-index: 2;
-
 }
-
 
 .signup-inputs {
   width: 350px;
 }
 
-.signup-submit-btn{
+.signup-submit-btn {
   width: 150px;
 }
 		
-.signup-inputs:hover{
+.signup-inputs:hover {
   background-color: var(--logo-color);
   border-color: black;
 }
 
 
 
+/* =============== POKEDEX PAGE ================ */
 
+.pokedex-page {
+  text-align: center;
+}
 
-
-
-
-
-
-/* =============== Pokedex page  ================ */
+.pokedex-header {
+  padding-bottom: 1rem;
+}
 
 .all-pokemon-container {
   /* background-color: yellow; */
@@ -366,12 +339,9 @@ input {
 
 
 
+/* =============== MAP PAGE ================ */
 
-
-
-/* =============== Map page  ================ */
-
-.map-page{
+.map-page {
   display: grid;
   grid-template-areas: 
   "grid grid moves"
@@ -382,7 +352,7 @@ input {
   width: 100%;
 }
 
-.grid-container{
+.grid-container {
   grid-area: grid;
   background-color: #1C2541;
   /* background-image: url("./images/map.jpeg"); */
@@ -399,12 +369,12 @@ input {
   border: 1px red solid;
 }
 
-.user-grid{
-  background-image: url("./images/ash_sprite.png");
+.user-grid {
+  background-image: url("./images/ashSprite.png");
   background-size: cover;
 }
 
-.moves-container{
+.moves-container {
   grid-area: moves;
   padding: 1rem;
   display: grid;
@@ -414,36 +384,29 @@ input {
   ". down .";
 }
 
-.up-btn{
+.up-btn {
   grid-area: up;
 
 }
 
-.right-btn{
+.right-btn {
   grid-area: right;
 }
 
-.down-btn{
+.down-btn {
   grid-area: down;
 }
 
-.left-btn{
+.left-btn {
   grid-area: left;
 }
 
-.user-sprite{
+.user-sprite {
   grid-area: user;
 }
 
-.wild-pokemon-container{
+.wild-pokemon-container {
   grid-area: wildPokemon;
   display: flex;
   /* flex-direction: column; */
 }
-
-
-
-
-
-
-
