@@ -26,7 +26,7 @@ export const Pokemon = ({pokemon}) => {
       <p>{`Pokemon HP: ${pokemon.hp}`}</p>
       <p>{`Pokemon Level: ${pokemon.level}`}</p>
 
-      <button className="delete-btn"> 
+      <button className="release-btn"> 
       <FontAwesomeIcon icon={faTrash}/> Delete </button>
 
     </div>

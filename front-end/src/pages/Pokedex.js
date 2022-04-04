@@ -21,6 +21,26 @@ export default function Pokedex({ currentUser }) {
     }
   }, [currentUser]);
 
+ // delete button function
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Data is within userPokemon and we want to map the array to display the pokemon
 
   // The rendered list will be in pokemonList

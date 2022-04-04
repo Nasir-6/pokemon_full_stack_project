@@ -298,7 +298,7 @@ input {
   background-color: rgb(206, 220, 234);
   color: darkslategrey;
   width: 250px;
-  height: 300px;
+  /* height: 300px; */
   font-family: sans-serif;
   margin: 2rem;
   margin-bottom: 2rem;
@@ -339,9 +339,9 @@ input {
 }
 
 
-/* delete button for each pokedex */
+/* delete(release) button for each pokedex */
 
-.delete-btn {
+.release-btn {
   background-color:var(--dark-color);
   color: white;
   border: none;
@@ -359,13 +359,13 @@ a {
   text-decoration: none;
 }
 
-.delete-btn:hover {
+.release-btn:hover {
   background-color: var(--logo-color);
   color: var(--dark-color);
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 
-.delete-btn:active {
+.release-btn:active {
   background-color: var(--dark-color);
   color: white;
   box-shadow: 5px;
