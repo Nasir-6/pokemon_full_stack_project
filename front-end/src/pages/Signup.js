@@ -11,11 +11,11 @@ import charmander from '../images/charmander.png';
 //Taking that information and updating our database - addingTrainer & Post request
 //catching the error if same email is added 
 //flagging it to the user as well
-export default function Signup(createCurrentUser) {
+export default function Signup() {
 
 
 //use this to navigate to login page
-const navigate =useNavigate();
+const navigate = useNavigate();
 
 
 // set the state
@@ -25,8 +25,8 @@ const [password,setPassword]= useState("");
 const [invalidInputWarning, setInvalidInputWarning] = useState("");
 
 
-const addTrainer = async (newTrainerDetails) => {
-
+const addTrainerToDb = async (newTrainerDetails) => {
+  // console.log(newTrainerDetails);
   const trainer = await fetch("http://localhost:8080/trainer", {
   method:"POST",
   headers:{
@@ -42,7 +42,7 @@ const addTrainer = async (newTrainerDetails) => {
     throw Error(response.statusText);
   }
   })
-  .catch(error => setInvalidInputWarning("Invalid Email or Password"))
+  .catch(error => setInvalidInputWarning("User email is already in use"))
 
   return trainer;
   }
@@ -58,14 +58,28 @@ const addTrainer = async (newTrainerDetails) => {
     const newTrainerDetails = {
       "name":name,
       "email": email,
-      "password": password 
+      "password": password,
+      "sprite_link": "replace with actual sprite link"
     }
+
+    // console.log(newTrainerDetails);
+    addTrainerToDb(newTrainerDetails);
 
     navigate("/Login");
     
-    
   }
 
+  const handleNameChange = (event) =>{
+    setName(event.target.value);
+  }
+
+  const handleEmailChange = (event) =>{
+    setEmail(event.target.value);
+  }
+
+  const handlePasswordChange = (event) =>{
+    setPassword(event.target.value);
+  }
 
 
   return (
@@ -73,14 +87,14 @@ const addTrainer = async (newTrainerDetails) => {
     <div className='login-page'>
       <h1>Sign up</h1>
     
-      <form  action="post" className='signup-form'>      
-      <input type="text" className="signup-inputs" placeholder="Choose username"required></input>
-      <input type="text" className="signup-inputs" placeholder="Enter valid email address" required></input>
-      <input type="password" className="signup-inputs" placeholder="Password" required></input>
+      <form action="post" className='signup-form' onSubmit={handleSignupButton}>      
+      <input type="text" className="signup-inputs" placeholder="Choose username" onChange={handleNameChange}required></input>
+      <input type="text" className="signup-inputs" placeholder="Enter valid email address" onChange={handleEmailChange}required></input>
+      <input type="password" className="signup-inputs" placeholder="Password" onChange={handlePasswordChange}required></input>
       {/* <input type="password" className="signup-inputs" placeholder="Confirm" required></input> */}
 
       {/* <p className="invalidText">{invalidInputWarning}</p> */}
-      <input type="submit" name="login" id="login-btn" className='btn signup-submit-btn' value="Sign up"/>
+      <input type="submit" name="signup" id="signup-btn" className='btn signup-submit-btn' value="Sign up"/>
       </form>
 
       <img src={charmander} alt="charmander" />
