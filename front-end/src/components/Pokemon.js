@@ -3,33 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 // Passing in the single pokemon as a prop
-export const Pokemon = ({pokemon}) => {
+
+
+export const Pokemon = ({ pokemon, releasePokemon }) => {
+
+  const handleReleaseButton = ()=>{    
+    releasePokemon(pokemon.id)
+  }
+
   return (
-    <>
-     <div className="pokemonCard-Container"></div>
-    
-
-   
-    
     <div className="pokemonCard">
-
-      
-      
-
-      <h3 className='card-title'>{pokemon.name}</h3>
-      <div className='card-img-container'>
-        <img src={pokemon.sprite_link} alt= {`Image of ${pokemon.name}`} className="pokemon-sprite" />
+      <h3 className="card-title">{pokemon.name}</h3>
+      <div className="card-img-container">
+        <img src={pokemon.sprite_link} alt={`Image of ${pokemon.name}`} className="pokemon-sprite" />
       </div>
-      <br/>
+      <br />
       <p>{`National Pokedex Number: #${pokemon.pokeapi_id}`}</p>
-      <br/>
+      <br />
       <p>{`Pokemon HP: ${pokemon.hp}`}</p>
       <p>{`Pokemon Level: ${pokemon.level}`}</p>
 
-      <button className="release-btn"> 
-      <FontAwesomeIcon icon={faTrash}/> Delete </button>
-
+      <button className="release-btn" onClick={handleReleaseButton}>Release</button>
     </div>
-    </>
-  )
-}
+  );
+};

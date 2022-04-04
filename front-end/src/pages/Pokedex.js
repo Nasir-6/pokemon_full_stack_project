@@ -9,13 +9,18 @@ export default function Pokedex({ currentUser }) {
 
   const isMounted = useRef(false);
 
+
+  const getPokemonList= async () => {
+    await fetch(`http://localhost:8080/pokemon/trainer/${currentUser.id}`)
+    .then((response) => response.json())
+    // Setting the state with setUserPokemon
+    .then((data) => setUserPokemon(data));
+  // When currentUser changes the useEffect runs
+   }
+
   useEffect(() => {
     if (isMounted.current) {
-      fetch(`http://localhost:8080/pokemon/trainer/${currentUser.id}`)
-        .then((response) => response.json())
-        // Setting the state with setUserPokemon
-        .then((data) => setUserPokemon(data));
-      // When currentUser changes the useEffect runs
+      getPokemonList();
     } else {
       isMounted.current = true;
     }
@@ -23,20 +28,16 @@ export default function Pokedex({ currentUser }) {
 
  // delete button function
 
- 
 
 
-
-
-
-
-
-
-
-
-
-
-
+ const deletePokemonFromDb = async (pokemonId) =>{
+  await fetch(`http://localhost:8080/pokemon/${pokemonId}`,
+    {
+    method: "DELETE",
+  });
+  // Update rendered list after delete
+  getPokemonList();
+ }
 
 
 
@@ -50,7 +51,7 @@ export default function Pokedex({ currentUser }) {
       // We need to make a component called Pokemon which has a singular pokemon
       // The details are passes down as a prop to the pokemon component and the details are stored in the pokemon variable
 
-      <Pokemon pokemon={pokemon} key={pokemon.id} />
+      <Pokemon key={pokemon.id} pokemon={pokemon} releasePokemon ={(pokemonId) => {deletePokemonFromDb(pokemonId)}} />
     );
   });
 
@@ -58,7 +59,7 @@ export default function Pokedex({ currentUser }) {
     <div className="pokedex-page">
       <div className="pokedex-header">
         {/* <h2>{`Hi ${currentUser.name}`}</h2> */}
-        <h1>{`${currentUser.name}'s Pokedéx`}</h1>
+        <h1>{`${currentUser.name}'s Pokédex`}</h1>
         {/* Change this to user's chosen trainer sprite */}
         <h2>Manage your Pokémon team</h2>
       </div>
