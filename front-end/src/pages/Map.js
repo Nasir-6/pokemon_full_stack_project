@@ -84,9 +84,10 @@ export default function Map({currentUser}) {
     const newPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
     .then(response => response.json())
 
+    // use Slice and upperCase to make first letter UpperCase
     setWildPokemon({
       trainer_id: currentUser.id,
-      name: newPokemon.name,
+      name: newPokemon.name.charAt(0).toUpperCase() + newPokemon.name.slice(1),
       pokeapi_id: wildPokemonId,
       sprite_link: newPokemon.sprites.front_default,
       hp: 64,
