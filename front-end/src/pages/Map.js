@@ -1,4 +1,3 @@
-import React from "react";
 import userSprite from "../images/ashSprite.png";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -6,13 +5,13 @@ import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/
 
 
 
-export default function Map() {
+export default function Map({currentUser}) {
 
   const [userPosition, setUserPostion] = useState(10);
 
   let gridIndexes = []; 
   // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
-  const GRIDLENGTH = 10;
+  const GRIDLENGTH = 32;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
     gridIndexes.push(i);
   }
@@ -68,20 +67,36 @@ export default function Map() {
   // =============== WILD POKEMON GENERATOR CODE =================
 
   // UseEffect for running ilPokenmonID - when userPosition changes 
-  const [spriteUrl, setSpriteUrl] = useState("")
-  const [wildPokemonId, setWildPokemonId] = useState(1)
+  const [wildPokemon, setWildPokemon] = useState({
+    trainer_id: currentUser.id,
+    name: null,
+    pokeapi_id: null,
+    sprite_link: null,
+    hp: null,
+    level: null
+  });
+  const [wildPokemonId, setWildPokemonId] = useState(1);
   const [foundWildPokemon, setFoundWildPokemon] = useState(true);
 
   // fetch a pokemon and console.log the url
-  const grabPokemonSprite = async () => {
-      const newSpriteUrl = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
-      .then(response => response.json())
-      .then(onePokemon => onePokemon.sprites.front_default)
-      setSpriteUrl(newSpriteUrl);
-  }
+
+  const grabPokemon = async () => {
+    const newPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
+    .then(response => response.json())
+
+    // use Slice and upperCase to make first letter UpperCase
+    setWildPokemon({
+      trainer_id: currentUser.id,
+      name: newPokemon.name.charAt(0).toUpperCase() + newPokemon.name.slice(1),
+      pokeapi_id: wildPokemonId,
+      sprite_link: newPokemon.sprites.front_default,
+      hp: 64,
+      level: 10
+    });
+}
 
   useEffect(()=>{
-      grabPokemonSprite();
+      grabPokemon();
   },[wildPokemonId])
   // Run above useEffect on mount aswell as when wildPokemonId changes state (i.e grabSprite when wildPokemonId change )
 
@@ -96,7 +111,14 @@ export default function Map() {
           setFoundWildPokemon(true)
           
       } else if(wildPokemonProbability < 0.6){
-          setSpriteUrl(null); // set to null so previous pokemon not shown!!
+          setWildPokemon({
+            trainer_id: currentUser.id,
+            name: null,
+            pokeapi_id: null,
+            sprite_link: null,
+            hp: null,
+            level: null
+          }); // set to null so previous pokemon not shown!!
           setFoundWildPokemon(false)
       }  
   }
@@ -107,6 +129,28 @@ export default function Map() {
     wildPokemonIdGenerator();
   }, [userPosition])
 
+
+  const addPokemonToDb = async () => {
+    const result = await fetch("http://localhost:8080/pokemon",{
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(wildPokemon)
+    })
+    .then(response => {
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        console.log(response);
+        throw Error(response.statusText);
+      }
+    })
+    .catch(error => console.log(error))
+
+    console.log(result);
+    
+  }
 
 
 
@@ -130,7 +174,16 @@ export default function Map() {
       </div>
 
       <div className="wild-pokemon-container">
-      {foundWildPokemon ? <img src={spriteUrl} alt=""/> : <p>No wild pokemon found</p>}
+      {foundWildPokemon ? 
+      <>
+      <img src={wildPokemon.sprite_link} alt="" className="wildPokemon-sprite"/>
+      <p>{`A wild ${wildPokemon.name} appeared.`}</p>
+      <p>{`Level: ${wildPokemon.level}`}</p>
+      <button className="btn" onClick={addPokemonToDb}>Catch</button>
+      </>
+      
+      : 
+      <p>No wild pokemon found</p>}
       </div>
     </div>
   );

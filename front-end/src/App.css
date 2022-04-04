@@ -9,7 +9,7 @@
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
   
-  --grid-length: 10;
+  --grid-length: 32;
 }
 
 * {
@@ -301,8 +301,9 @@ input {
   height: 300px;
   font-family: sans-serif;
   margin: 2rem;
+  margin-bottom: 2rem;
   /* padding: 5%; */
-  padding: 5% 0;
+  padding: 3% 3% 1% 3% ;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -338,18 +339,66 @@ input {
 }
 
 
+/* delete button for each pokedex */
+
+.delete-btn {
+  background-color:var(--dark-color);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  border: 1px var(--logo-color) solid;
+
+} 
+
+a {
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  background-color: var(--logo-color);
+  color: var(--dark-color);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+.delete-btn:active {
+  background-color: var(--dark-color);
+  color: white;
+  box-shadow: 5px;
+  transform: translate(4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =============== MAP PAGE ================ */
 
 .map-page {
   display: grid;
   grid-template-areas: 
-  "grid grid moves"
-  "grid grid wildPokemon";
+  "grid moves"
+  "grid wildPokemon";
   background-color: var(--background-color);
-  height: 80vh;
   padding: 4rem;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .grid-container {
@@ -358,20 +407,24 @@ input {
   /* background-image: url("./images/map.jpeg"); */
   background-image: url("./images/map_iain.png");
   background-size: cover;
-  /* background-repeat: no-repeat; */
+  background-position: right;
   min-width: 400px;
   display: grid;
   grid-template-columns: repeat(var(--grid-length), 1fr);
   grid-template-rows: repeat(var(--grid-length), 1fr);
+  width: 500px;
+  height: 500px;
 }
 
 .oneGrid{
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 .user-grid {
   background-image: url("./images/ashSprite.png");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center;
 }
 
 .moves-container {
@@ -382,6 +435,10 @@ input {
   ". up ."
   "left user right"
   ". down .";
+  width: fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+  justify-self: center;
 }
 
 .up-btn {
@@ -403,10 +460,51 @@ input {
 
 .user-sprite {
   grid-area: user;
+  width: 50px;
+}
+
+.up-btn, 
+.down-btn, 
+.left-btn, 
+.right-btn,
+.user-sprite{
+  justify-self:center;
+  align-self: center;
 }
 
 .wild-pokemon-container {
   grid-area: wildPokemon;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-width: 240px;
+  min-height: 240px;
+
 }
+
+.wildPokemon-sprite{
+  width: 100px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  /* 1.5 rem = 12 * 1.5 = 18px  */
+    /* html { 
+        font-size: 12px;
+    } */
+
+    .map-page {
+      display: grid;
+      grid-template-areas: 
+      "grid grid"
+      "moves wildPokemon";
+      background-color: var(--background-color);
+      padding: 2rem;
+      width: 100%;
+      justify-content: center;
+
+    }
+  }
+
