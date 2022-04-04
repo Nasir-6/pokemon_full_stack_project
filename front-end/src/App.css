@@ -9,7 +9,7 @@
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
   
-  --grid-length: 10;
+  --grid-length: 25;
 }
 
 * {
@@ -347,7 +347,6 @@ input {
   "grid grid moves"
   "grid grid wildPokemon";
   background-color: var(--background-color);
-  height: 80vh;
   padding: 4rem;
   width: 100%;
 }
@@ -359,19 +358,24 @@ input {
   background-image: url("./images/map_iain.png");
   background-size: cover;
   /* background-repeat: no-repeat; */
+  background-position: right;
   min-width: 400px;
   display: grid;
   grid-template-columns: repeat(var(--grid-length), 1fr);
   grid-template-rows: repeat(var(--grid-length), 1fr);
+  width: 500px;
+  height: 500px;
 }
 
 .oneGrid{
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 .user-grid {
   background-image: url("./images/ashSprite.png");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center;
 }
 
 .moves-container {
@@ -382,6 +386,9 @@ input {
   ". up ."
   "left user right"
   ". down .";
+  width: fit-content;
+  height: fit-content;
+  gap: 0.5rem;
 }
 
 .up-btn {
@@ -403,6 +410,16 @@ input {
 
 .user-sprite {
   grid-area: user;
+  width: 50px;
+}
+
+.up-btn, 
+.down-btn, 
+.left-btn, 
+.right-btn,
+.user-sprite{
+  justify-self:center;
+  align-self: center;
 }
 
 .wild-pokemon-container {
