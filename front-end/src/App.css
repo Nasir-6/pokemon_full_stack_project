@@ -344,11 +344,14 @@ input {
 .map-page {
   display: grid;
   grid-template-areas: 
-  "grid grid moves"
-  "grid grid wildPokemon";
+  "grid moves"
+  "grid wildPokemon";
   background-color: var(--background-color);
   padding: 4rem;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .grid-container {
@@ -357,7 +360,6 @@ input {
   /* background-image: url("./images/map.jpeg"); */
   background-image: url("./images/map_iain.png");
   background-size: cover;
-  /* background-repeat: no-repeat; */
   background-position: right;
   min-width: 400px;
   display: grid;
@@ -426,4 +428,28 @@ input {
   grid-area: wildPokemon;
   display: flex;
   /* flex-direction: column; */
+  justify-content: center;
+  /* align-items: center; */
+  padding: 1rem;
 }
+
+@media only screen and (max-width: 1000px) {
+
+  /* 1.5 rem = 12 * 1.5 = 18px  */
+    /* html { 
+        font-size: 12px;
+    } */
+
+    .map-page {
+      display: grid;
+      grid-template-areas: 
+      "grid grid"
+      "moves wildPokemon";
+      background-color: var(--background-color);
+      padding: 2rem;
+      width: 100%;
+      justify-content: center;
+
+    }
+  }
+
