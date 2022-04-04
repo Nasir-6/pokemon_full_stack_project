@@ -129,9 +129,28 @@ export default function Map({currentUser}) {
   }, [userPosition])
 
 
-  const addPokemonToDb = () => {
+  const addPokemonToDb = async () => {
+    const result = await fetch("http://localhost:8080/pokemon",{
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(wildPokemon)
+    })
+    .then(response => {
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        console.log(response);
+        throw Error(response.statusText);
+      }
+    })
+    .catch(error => console.log(error))
+
+    console.log(result);
     
   }
+
 
 
 
