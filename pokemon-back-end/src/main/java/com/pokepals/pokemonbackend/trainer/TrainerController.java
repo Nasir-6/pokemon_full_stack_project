@@ -24,7 +24,7 @@ public class TrainerController {
     }
 
     @PostMapping(path = "trainer")
-    public Trainer addPerson(@RequestBody Trainer trainer) {
+    public Trainer addTrainer(@RequestBody Trainer trainer) {
         return trainerService.addTrainer(trainer);
     }
 
