@@ -9,7 +9,7 @@
   --background-color: rgb(245 245 245);
   --dark-background-color: rgb(130, 26, 17);
   
-  --grid-length: 25;
+  --grid-length: 32;
 }
 
 * {
@@ -438,6 +438,7 @@ a {
   width: fit-content;
   height: fit-content;
   gap: 0.5rem;
+  justify-self: center;
 }
 
 .up-btn {
@@ -476,8 +477,15 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   padding: 1rem;
+  min-width: 240px;
+  min-height: 240px;
+
+}
+
+.wildPokemon-sprite{
+  width: 100px;
 }
 
 @media only screen and (max-width: 1000px) {

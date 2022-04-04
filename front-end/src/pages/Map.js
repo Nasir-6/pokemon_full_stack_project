@@ -11,7 +11,7 @@ export default function Map({currentUser}) {
 
   let gridIndexes = []; 
   // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
-  const GRIDLENGTH = 25;
+  const GRIDLENGTH = 32;
   for (let i = 1; i <= GRIDLENGTH ** 2; i++) {
     gridIndexes.push(i);
   }
@@ -129,6 +129,9 @@ export default function Map({currentUser}) {
   }, [userPosition])
 
 
+  const addPokemonToDb = () => {
+    
+  }
 
 
 
@@ -153,10 +156,10 @@ export default function Map({currentUser}) {
       <div className="wild-pokemon-container">
       {foundWildPokemon ? 
       <>
-      <img src={wildPokemon.sprite_link} alt=""/>
+      <img src={wildPokemon.sprite_link} alt="" className="wildPokemon-sprite"/>
       <p>{`A wild ${wildPokemon.name} appeared.`}</p>
       <p>{`Level: ${wildPokemon.level}`}</p>
-      <button className="btn">Catch</button>
+      <button className="btn" onClick={addPokemonToDb}>Catch</button>
       </>
       
       : 
