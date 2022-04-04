@@ -47,7 +47,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login updateCurrentUser={(update)=> setCurrentUser(update)} />}/>
-            <Route exact path="/signup" element={<Signup updateCurrentUser={(update)=> setCurrentUser(update)}/>} />
+            <Route exact path="/signup" element={<Signup CurrentUser={(update)=> setCurrentUser(update)}/>} />
             <Route exact path="/map" element={<Map currentUser={currentUser}/>} />
             <Route exact path="/pokedex" element={<Pokedex currentUser={currentUser}/>} />
           </Routes>
