@@ -1,4 +1,3 @@
-import React from "react";
 import userSprite from "../images/ashSprite.png";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -6,7 +5,7 @@ import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/
 
 
 
-export default function Map() {
+export default function Map({currentUser}) {
 
   const [userPosition, setUserPostion] = useState(10);
 
@@ -68,20 +67,35 @@ export default function Map() {
   // =============== WILD POKEMON GENERATOR CODE =================
 
   // UseEffect for running ilPokenmonID - when userPosition changes 
-  const [spriteUrl, setSpriteUrl] = useState("")
-  const [wildPokemonId, setWildPokemonId] = useState(1)
+  const [wildPokemon, setWildPokemon] = useState({
+    trainer_id: currentUser.id,
+    name: null,
+    pokeapi_id: null,
+    sprite_link: null,
+    hp: null,
+    level: null
+  });
+  const [wildPokemonId, setWildPokemonId] = useState(1);
   const [foundWildPokemon, setFoundWildPokemon] = useState(true);
 
   // fetch a pokemon and console.log the url
-  const grabPokemonSprite = async () => {
-      const newSpriteUrl = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
-      .then(response => response.json())
-      .then(onePokemon => onePokemon.sprites.front_default)
-      setSpriteUrl(newSpriteUrl);
-  }
+
+  const grabPokemon = async () => {
+    const newPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${wildPokemonId}/`)
+    .then(response => response.json())
+
+    setWildPokemon({
+      trainer_id: currentUser.id,
+      name: newPokemon.name,
+      pokeapi_id: wildPokemonId,
+      sprite_link: newPokemon.sprites.front_default,
+      hp: 64,
+      level: 10
+    });
+}
 
   useEffect(()=>{
-      grabPokemonSprite();
+      grabPokemon();
   },[wildPokemonId])
   // Run above useEffect on mount aswell as when wildPokemonId changes state (i.e grabSprite when wildPokemonId change )
 
@@ -96,7 +110,14 @@ export default function Map() {
           setFoundWildPokemon(true)
           
       } else if(wildPokemonProbability < 0.6){
-          setSpriteUrl(null); // set to null so previous pokemon not shown!!
+          setWildPokemon({
+            trainer_id: currentUser.id,
+            name: null,
+            pokeapi_id: null,
+            sprite_link: null,
+            hp: null,
+            level: null
+          }); // set to null so previous pokemon not shown!!
           setFoundWildPokemon(false)
       }  
   }
@@ -130,7 +151,16 @@ export default function Map() {
       </div>
 
       <div className="wild-pokemon-container">
-      {foundWildPokemon ? <img src={spriteUrl} alt=""/> : <p>No wild pokemon found</p>}
+      {foundWildPokemon ? 
+      <>
+      <img src={wildPokemon.sprite_link} alt=""/>
+      <p>{`A wild ${wildPokemon.name} appeared.`}</p>
+      <p>{`Level: ${wildPokemon.level}`}</p>
+      <button className="btn">Catch</button>
+      </>
+      
+      : 
+      <p>No wild pokemon found</p>}
       </div>
     </div>
   );

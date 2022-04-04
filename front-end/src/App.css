@@ -427,7 +427,7 @@ input {
 .wild-pokemon-container {
   grid-area: wildPokemon;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
   padding: 1rem;
