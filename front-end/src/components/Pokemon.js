@@ -20,8 +20,8 @@ export const Pokemon = ({ pokemon, releasePokemon }) => {
       <br />
       <p>{`National Pokedex Number: #${pokemon.pokeapi_id}`}</p>
       <br />
-      <p>{`Pokemon HP: ${pokemon.hp}`}</p>
-      <p>{`Pokemon Level: ${pokemon.level}`}</p>
+      <p className='pokemon-hp'>{`HP: ${pokemon.hp}`}</p>
+      <p className='pokemon-level'>{`Level: ${pokemon.level}`}</p>
 
       <button className="release-btn" onClick={handleReleaseButton}>Release</button>
     </div>

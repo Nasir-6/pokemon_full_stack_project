@@ -49,7 +49,7 @@ function App() {
           
 
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<Home currentUser={currentUser} />} />
             <Route exact path="/login" element={<Login updateCurrentUser={(update)=> setCurrentUser(update)} />}/>
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/map" element={<Map currentUser={currentUser}/>} />

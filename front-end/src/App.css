@@ -16,8 +16,9 @@
 padding: 0px;
 margin: 0px;
 box-sizing: border-box;
-font-family: 'M PLUS Rounded 1c', sans-serif;
+/* font-family: 'M PLUS Rounded 1c', sans-serif; */
 /* font-family: 'Roboto', sans-serif; */
+font-family:'Nunito', sans-serif;
 }
 
 #root {
@@ -168,44 +169,63 @@ a:hover .social-icon{
 /* =============== HOME PAGE ================ */
 
 .home-container {
-  position:relative;
+  min-width: 100%;
+  min-height: 80vh;
+  background-image: url('./images/pikachu_sleep.jpeg');
+  background-size: cover;
+
+  
+}
+
+.home-background-overlay{
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0,0,0,0.15); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1.5rem;
+  
+  
 }
 
 .home-title {
-padding: 20px;
-margin-top: 40px;
+  color: white;
+  color: var(--dark-color);
+/* padding: 20px; */
+/* margin-top: 40px; */
 font-size: 50px;
-position: absolute;
-transition: all .2s ease-in;
+font-weight: 550;
+/* position: absolute; */
+
 }
 
 .home-text {
-  position: absolute;
-  margin: 200px;
+  /* position: absolute; */
+  /* margin: 200px; */
+  color: var(--dark-color);
+  font-weight: 900;
+  font-size: 18px;
+  max-width: 500px;
+  padding: 1.5rem;
+  line-height: 1.75rem;
 }
 
-.home_background {
+/* .home_background {
   width: 100%;
   height: 100%;
-}
+} */
 
 .home-btn {
-  position:absolute;
-  /* border: none; */
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background-color: var(--dark-color);
-  color: white;
-  transition: all .3s;
+  margin-left: 1.5rem;
 }
 
-.home-btn:hover {
+/* .home-btn:hover {
   background-color: grey;
   border:none;
-}
+} */
 
 
 
@@ -342,6 +362,11 @@ input {
   object-fit: contain;
 }
 
+.pokemon-hp, .pokemon-level{
+  padding-bottom: 0.25rem;
+
+}
+
 
 /* delete(release) button for each pokedex */
 
@@ -356,6 +381,7 @@ input {
   cursor: pointer;
   transition-duration: 0.25s;
   border: 1px var(--logo-color) solid;
+  margin-top: 0.5rem;
 
 } 
 
@@ -410,6 +436,7 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 .grid-container {
@@ -450,6 +477,7 @@ a {
   height: fit-content;
   gap: 0.5rem;
   justify-self: center;
+  align-self: flex-end;
 }
 
 .up-btn {
@@ -492,6 +520,10 @@ a {
   padding: 1rem;
   min-width: 240px;
   min-height: 240px;
+  align-self: flex-start;
+  gap: 0.55rem;
+  text-align: center;
+  min-width: 290px;
 
 }
 
