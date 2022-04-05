@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 
+
 export default function Navbar({currentUser, updateCurrentUser}) {
 
 
   // NEED THIS TO USE NAVIGATE COMMAND
   const navigate = useNavigate();
+  
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -20,14 +22,17 @@ export default function Navbar({currentUser, updateCurrentUser}) {
     }
   }, [currentUser])
 
+ 
 
   const handleLogoutButtonClick = () => {
-    console.log('Logging OUt');
+    // console.log('Logging Out');
     updateCurrentUser(null);
     navigate("/");
+  
   }
 
 
+ 
   return (
     <div className="navbar">
       <div className="navbar-left">
@@ -37,8 +42,9 @@ export default function Navbar({currentUser, updateCurrentUser}) {
       </div>
       <div className="navbar-right">
         <Link to="/" className="btn">Home</Link>
-        { isLoggedIn ? <button className='btn' onClick={handleLogoutButtonClick}>Logout</button> : <Link to="/login" className="btn">Login</Link>}
-        { isLoggedIn ? <></> : <Link to="/signup" className='btn'>Sign up</Link>}
+        { isLoggedIn ? <Link to="/map" className="btn">Map</Link>: <></> }
+        { isLoggedIn ?  <Link to="/pokedex"  className="btn">Pokedex</Link> : <Link to="/login" className="btn">Login</Link>}
+        { isLoggedIn ? <button className='btn' onClick={handleLogoutButtonClick}>Logout</button> : <Link to="/signup" className='btn'>Sign up</Link>}
       </div>
     </div>
   );

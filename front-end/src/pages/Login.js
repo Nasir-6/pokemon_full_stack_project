@@ -84,7 +84,7 @@ export default function Login({updateCurrentUser}) {
       <input type="submit" name="login" id="login-btn" className='btn login-submit-btn' value="Login"/>
       </form>
 
-      <img src={squirtle} alt="spurtle image" />
+      <img src={squirtle} alt="spurtle" />
 
 
     </div>
