@@ -89,7 +89,7 @@ const addTrainerToDb = async (newTrainerDetails) => {
     
       <form action="post" className='signup-form' onSubmit={handleSignupButton}>      
       <input type="text" className="signup-inputs" placeholder="Choose username" onChange={handleNameChange}required></input>
-      <input type="text" className="signup-inputs" placeholder="Enter valid email address" onChange={handleEmailChange}required></input>
+      <input type="email" className="signup-inputs" placeholder="Enter email address" onChange={handleEmailChange}required></input>
       <input type="password" className="signup-inputs" placeholder="Password" onChange={handlePasswordChange}required></input>
       {/* <input type="password" className="signup-inputs" placeholder="Confirm" required></input> */}
 

@@ -78,7 +78,7 @@ export default function Login({updateCurrentUser}) {
       <h1>Login</h1>
 
       <form  action="post" className='login-form' onSubmit={handleSubmitButton}>
-      <input type="text"  className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
+      <input type="email"  className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
       <input type="password"  className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
       <p className="invalidText">{invalidInputWarning}</p>
       <input type="submit" name="login" id="login-btn" className='btn login-submit-btn' value="Login"/>
