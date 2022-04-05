@@ -496,15 +496,11 @@ a {
     } */
 
     .map-page {
-      display: grid;
       grid-template-areas: 
       "grid grid"
       "moves wildPokemon";
-      background-color: var(--background-color);
-      padding: 2rem;
-      width: 100%;
-      justify-content: center;
-
+      padding: 2rem; 
     }
+
   }
 
