@@ -25,6 +25,10 @@ function App() {
     }
   }, [currentUser])
 
+  // USECONTEXT!!! - designed for handling a logged in user! - have state without need for propdrilling!
+  // context is declared as a component - but could use wherever
+  // Redux - managing state - but not for login - used for updating lots of state, - need to design app ahead of time for redux
+  
 
   // On mount (when Refreshed) retrieve the currentUser stored in sessionStorage 
   useEffect(()=>{

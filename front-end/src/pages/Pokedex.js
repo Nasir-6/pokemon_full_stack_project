@@ -19,13 +19,19 @@ export default function Pokedex({ currentUser }) {
    }
 
   useEffect(() => {
-    if (isMounted.current) {
+    
+    if (!isMounted.current && currentUser!="") {
       getPokemonList();
-    } else {
       isMounted.current = true;
     }
+    // this return is only on cleanup - when you unmount component (i.e refreshing page)
+    return function cleanup(){isMounted.current = false}
   }, [currentUser]);
 
+  // Maybe useEffect on unmounting
+
+  // useEffect running on prop change 
+  // Never have a useEffect on a propChange 
  // delete button function
 
 

@@ -25,20 +25,10 @@ export default function Navbar({currentUser, updateCurrentUser}) {
  
 
   const handleLogoutButtonClick = () => {
-    console.log('Logging OUt');
+    // console.log('Logging Out');
     updateCurrentUser(null);
     navigate("/");
   
-  }
-
-  const handleMapButtonClick = () => {
-    console.log("Map page");
-    navigate("/map");
-  }
-
-  const handlePokedexButtonClick = () => {
-    console.log("Pokedex page");
-     navigate("/pokedex");
   }
 
 
@@ -52,10 +42,9 @@ export default function Navbar({currentUser, updateCurrentUser}) {
       </div>
       <div className="navbar-right">
         <Link to="/" className="btn">Home</Link>
-        { isLoggedIn ? <><button className='btn' onClick={handleMapButtonClick}>Map</button>  <Link to="/map" className="btn">Map</Link> </>: <></> }
-        { isLoggedIn ? <> <button className='btn' onClick={handlePokedexButtonClick}>Pokedex</button> < Link to="/pokedex"  className="btn">Pokedex</Link> </>  : <></> }
-        { isLoggedIn ? <button className='btn' onClick={handleLogoutButtonClick}>Logout</button> : <Link to="/login" className="btn">Login</Link>}
-        { isLoggedIn ? <></> : <Link to="/signup" className='btn'>Sign up</Link>}
+        { isLoggedIn ? <Link to="/map" className="btn">Map</Link>: <></> }
+        { isLoggedIn ?  <Link to="/pokedex"  className="btn">Pokedex</Link> : <Link to="/login" className="btn">Login</Link>}
+        { isLoggedIn ? <button className='btn' onClick={handleLogoutButtonClick}>Logout</button> : <Link to="/signup" className='btn'>Sign up</Link>}
       </div>
     </div>
   );
