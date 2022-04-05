@@ -406,9 +406,10 @@ a {
   min-height: 80vh;
 }
 
-.surprised-pikachu-page{
+.surprised-pikachu-page, .sad-bulbasaur-page{
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .grid-container {

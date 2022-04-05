@@ -87,12 +87,12 @@ export default function Pokedex({ currentUser }) {
 
   return (
     <div className="pokedex-page">
-      {currentUser==null ? 
-      <>
+      {currentUser==null ? (
+      <div className="surprised-pikachu-page">
         <img src={surprisedPikachu} alt={`Image of surprised Pikachu`} className="surprised-pikachu" />
         <p>You can't view your Pokédex if you haven't logged in! Please login!</p>
-      </>
-        :
+      </div>
+      ) : (
         <><div className="pokedex-header">
         {/* <h2>{`Hi ${currentUser.name}`}</h2> */}
         <h1>{`${currentUser.name}'s Pokédex`}</h1>
@@ -101,14 +101,15 @@ export default function Pokedex({ currentUser }) {
       </div>
       <div className="all-pokemon-container">
         {/* pokemonList has the list of pokemon */}
-        {pokemonList.length === 0 ? 
-        <> 
+        {pokemonList.length === 0 ? ( 
+        <div className='sad-bulbasaur-page'> 
         <p>Your Pokédex is empty, please go to the map to catch some Pokémon! </p>
         <img src={sadBulbasaur} alt={`Image of sad Bulbasaur`} className="sad-bulbasaur" />
-        </> : pokemonList}
+        </div>
+         ) : (pokemonList)}
       </div>
       </>
-        }
+      )}
     </div>
   );
 }
