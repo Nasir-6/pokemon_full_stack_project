@@ -416,15 +416,15 @@ a {
   grid-area: grid;
   background-color: #1C2541;
   /* background-image: url("./images/map.jpeg"); */
-  background-image: url("./images/map_iain.png");
+  background-image: url("./images/map_iain2.png");
   background-size: cover;
   background-position: right;
   min-width: 400px;
   display: grid;
   grid-template-columns: repeat(var(--grid-length), 1fr);
   grid-template-rows: repeat(var(--grid-length), 1fr);
-  width: 500px;
-  height: 500px;
+  width: 512px;
+  height: 512px;
 }
 
 .oneGrid{
@@ -499,7 +499,7 @@ a {
   width: 100px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1080px) {
 
   /* 1.5 rem = 12 * 1.5 = 18px  */
     /* html { 
