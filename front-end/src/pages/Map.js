@@ -9,6 +9,7 @@ import surprisedPikachu from '../images/surprised_pikachu.jpeg'
 export default function Map({currentUser}) {
 
   const [userPosition, setUserPostion] = useState(10);
+  const [isPokemonCaught, setIsPokemonCaught] = useState(false);
 
   let gridIndexes = []; 
   // This array will have indexes from 1-GridLength^2 e.g [1,2,3, .... 98, 99, 100] - this is made via the for loop below
@@ -128,6 +129,7 @@ export default function Map({currentUser}) {
 
   useEffect(()=>{
     wildPokemonIdGenerator();
+    setIsPokemonCaught(false);
   }, [userPosition])
 
 
@@ -141,6 +143,7 @@ export default function Map({currentUser}) {
     })
     .then(response => {
       if (response.status >= 200 && response.status <= 299) {
+        setIsPokemonCaught(true)
         return response.json();
       } else {
         console.log(response);
@@ -204,9 +207,11 @@ export default function Map({currentUser}) {
                 />
                 <p>{`A wild ${wildPokemon.name} appeared.`}</p>
                 <p>{`Level: ${wildPokemon.level}`}</p>
-                <button className="btn" onClick={addPokemonToDb}>
-                  Catch
-                </button>
+                {isPokemonCaught ? 
+                <p>{`The wild ${wildPokemon.name} has been captured.`}</p> 
+                :
+                <button className="btn" onClick={addPokemonToDb}>Catch</button>
+                }
               </>
             ) : (
               <p>No wild pokemon found</p>
