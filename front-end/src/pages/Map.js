@@ -2,6 +2,7 @@ import userSprite from "../images/ashSprite.png";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import surprisedPikachu from '../images/surprised_pikachu.jpeg'
 
 
 
@@ -68,7 +69,7 @@ export default function Map({currentUser}) {
 
   // UseEffect for running ilPokenmonID - when userPosition changes 
   const [wildPokemon, setWildPokemon] = useState({
-    trainer_id: currentUser.id,
+    trainer_id: null,
     name: null,
     pokeapi_id: null,
     sprite_link: null,
@@ -160,31 +161,59 @@ export default function Map({currentUser}) {
 
   return (
     <div className="map-page">
-      <div className="grid-container">
-        {grids}
-      </div>
+      {currentUser == null ? (
+        <div className="surprised-pikachu-page">
+          <img src={surprisedPikachu} alt={`Image of surprised Pikachu`} className="surprised-pikachu" />
+          <p>You can't catch Pokémon if you haven't logged in! Please login!</p>
+        </div>
+      ) : (
+        <>
+          <div className="grid-container">{grids}</div>
 
-      <div className="moves-container">
-        
-        <FontAwesomeIcon icon={faArrowUp} onClick={moveUp} className="btn up-btn"/> 
-        <FontAwesomeIcon icon={faArrowRight} onClick={moveRight} className="btn right-btn"/> 
-        <FontAwesomeIcon icon={faArrowDown} onClick={moveDown} className="btn down-btn"/> 
-        <FontAwesomeIcon icon={faArrowLeft} onClick={moveLeft} className="btn left-btn"/> 
-        <img src={userSprite} alt="User sprite" className="user-sprite" />
-      </div>
+          <div className="moves-container">
+            <FontAwesomeIcon
+              icon={faArrowUp}
+              onClick={moveUp}
+              className="btn up-btn"
+            />
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              onClick={moveRight}
+              className="btn right-btn"
+            />
+            <FontAwesomeIcon
+              icon={faArrowDown}
+              onClick={moveDown}
+              className="btn down-btn"
+            />
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              onClick={moveLeft}
+              className="btn left-btn"
+            />
+            <img src={userSprite} alt="User sprite" className="user-sprite" />
+          </div>
 
-      <div className="wild-pokemon-container">
-      {foundWildPokemon ? 
-      <>
-      <img src={wildPokemon.sprite_link} alt="" className="wildPokemon-sprite"/>
-      <p>{`A wild ${wildPokemon.name} appeared.`}</p>
-      <p>{`Level: ${wildPokemon.level}`}</p>
-      <button className="btn" onClick={addPokemonToDb}>Catch</button>
-      </>
-      
-      : 
-      <p>No wild pokemon found</p>}
-      </div>
+          <div className="wild-pokemon-container">
+            {foundWildPokemon ? (
+              <>
+                <img
+                  src={wildPokemon.sprite_link}
+                  alt=""
+                  className="wildPokemon-sprite"
+                />
+                <p>{`A wild ${wildPokemon.name} appeared.`}</p>
+                <p>{`Level: ${wildPokemon.level}`}</p>
+                <button className="btn" onClick={addPokemonToDb}>
+                  Catch
+                </button>
+              </>
+            ) : (
+              <p>No wild pokemon found</p>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

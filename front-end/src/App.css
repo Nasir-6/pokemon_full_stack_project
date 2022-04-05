@@ -279,6 +279,10 @@ input {
 
 .pokedex-page {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
 }
 
 .pokedex-header {
@@ -399,6 +403,12 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  min-height: 80vh;
+}
+
+.surprised-pikachu-page{
+  display: flex;
+  flex-direction: column;
 }
 
 .grid-container {
