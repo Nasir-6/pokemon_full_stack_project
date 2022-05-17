@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import squirtle from '../images/squirtle.png';
+import { SERVER_URL } from '../Constants';
 
 
 export default function Login({updateCurrentUser}) {
@@ -15,7 +16,7 @@ export default function Login({updateCurrentUser}) {
   const [invalidInputWarning, setInvalidInputWarning] = useState("");
 
   const getTrainerIfDetailsAreValid = async (trainerDetails) => {
-    const trainer = await fetch("http://localhost:8080/trainer/login",{
+    const trainer = await fetch(SERVER_URL + "/trainer/login",{
       method:"POST",
       headers:{
         'Content-Type': 'application/json'

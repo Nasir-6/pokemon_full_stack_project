@@ -1,5 +1,6 @@
 import { useState ,useEffect, useRef } from 'react';
 import { Pokemon } from '../components/Pokemon';
+import { SERVER_URL } from '../Constants';
 import sadBulbasaur from '../images/sad_bulbasaur.png'
 import surprisedPikachu from '../images/surprised_pikachu.jpeg'
 
@@ -13,7 +14,7 @@ export default function Pokedex({ currentUser }) {
 
 
   const getPokemonList= async () => {
-    await fetch(`http://localhost:8080/pokemon/trainer/${currentUser.id}`)
+    await fetch(`${SERVER_URL}/pokemon/trainer/${currentUser.id}`)
     .then((response) => {
       if (response.status >= 200 && response.status <= 299) {
         return response.json();
@@ -50,7 +51,7 @@ export default function Pokedex({ currentUser }) {
 
 
  const deletePokemonFromDb = async (pokemonId) =>{
-  await fetch(`http://localhost:8080/pokemon/${pokemonId}`,
+  await fetch(`${SERVER_URL}/pokemon/${pokemonId}`,
     {
     method: "DELETE",
   });

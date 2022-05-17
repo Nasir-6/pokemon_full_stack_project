@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight, faArrowLeft, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import surprisedPikachu from '../images/surprised_pikachu.jpeg'
+import { SERVER_URL } from "../Constants";
 
 
 
@@ -136,7 +137,7 @@ export default function Map({currentUser}) {
 
 
   const addPokemonToDb = async () => {
-    const result = await fetch("http://localhost:8080/pokemon",{
+    const result = await fetch(SERVER_URL + "/pokemon",{
       method:"POST",
       headers:{
         'Content-Type': 'application/json'

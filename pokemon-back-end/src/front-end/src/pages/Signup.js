@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom'
+import { SERVER_URL } from '../Constants';
 import charmander from '../images/charmander.png';
 
 
@@ -27,7 +28,7 @@ const [invalidInputWarning, setInvalidInputWarning] = useState("");
 
 const addTrainerToDb = async (newTrainerDetails) => {
   // console.log(newTrainerDetails);
-  const trainer = await fetch("http://localhost:8080/trainer", {
+  const trainer = await fetch(SERVER_URL + "/trainer", {
   method:"POST",
   headers:{
     'Content-Type':'application/json'
