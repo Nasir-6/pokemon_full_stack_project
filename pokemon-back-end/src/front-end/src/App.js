@@ -9,10 +9,13 @@ import Signup from './pages/Signup';
 import Pokedex from './pages/Pokedex';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { SERVER_URL } from './Constants';
 
 
 function App() {
 
+  // console.log(SERVER_URL)
+  if(process.env.NODE_ENV != 'production') console.log("Please ensure you are running the local intelliJ Server on port 8080, as you are not running the production build!")
   const [currentUser, setCurrentUser] = useState("");
 
   //Store the currentUser in sessionStorage everytime it changes
