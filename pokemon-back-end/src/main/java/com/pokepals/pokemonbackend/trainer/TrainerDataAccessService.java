@@ -19,10 +19,9 @@ public class TrainerDataAccessService implements TrainerDAO{
     @Override
     public List<Trainer> getAllTrainers() {
 
-        String sql = """
-                SELECT id, name, email, password, sprite_link
-                FROM trainer
-                """;
+        String sql =
+                "SELECT id, name, email, password, sprite_link" +
+                " FROM trainer";
 
         RowMapper<Trainer> trainerRowMapper = (rs, rowNum) -> {  //rowmapper to go through each row, gives you result set, which we then turn into ints, strings etc to make a new car object
             Trainer trainer = new Trainer(
@@ -46,10 +45,10 @@ public class TrainerDataAccessService implements TrainerDAO{
 
     @Override
     public Trainer getTrainerById(Integer id) {
-        String sql = """
-                SELECT id, name, email, password, sprite_link 
-                FROM trainer WHERE id = ?
-                """;
+        String sql =
+                "SELECT id, name, email, password, sprite_link" +
+                " FROM trainer WHERE id = ?";
+
         RowMapper<Trainer> trainerRowMapper = (rs, rowNum) -> {
             return new Trainer(
                     rs.getInt("id"),
@@ -73,10 +72,9 @@ public class TrainerDataAccessService implements TrainerDAO{
 
     @Override
     public int addTrainer(Trainer trainer) {
-        String sql = """
-                INSERT INTO trainer (name, email, password, sprite_link)
-                VALUES(?, ?, ?, ?)
-                """;
+        String sql =
+                "INSERT INTO trainer (name, email, password, sprite_link)" +
+                " VALUES(?, ?, ?, ?)";
 
         // Use .update Method when Inserting/deleting/updating
 

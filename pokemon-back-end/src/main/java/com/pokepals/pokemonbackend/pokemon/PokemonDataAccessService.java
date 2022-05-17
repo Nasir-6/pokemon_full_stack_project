@@ -15,10 +15,9 @@ public class PokemonDataAccessService implements PokemonDAO {
 
     @Override
     public List<Pokemon> getAllPokemon() {
-        String sql = """
-                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level 
-                FROM pokedex
-                """;
+        String sql =
+                "SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level" +
+                " FROM pokedex";
         RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
             Pokemon pokemon = new Pokemon(
                     rs.getInt("id"),
@@ -43,10 +42,8 @@ public class PokemonDataAccessService implements PokemonDAO {
 
     @Override
     public Pokemon getPokemonById(Integer id) {
-        String sql = """
-                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level 
-                FROM pokedex WHERE id = ?
-                """;
+        String sql = "SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level" +
+                " FROM pokedex WHERE id = ?";
         RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
             return new Pokemon(
                     rs.getInt("id"),
@@ -72,10 +69,9 @@ public class PokemonDataAccessService implements PokemonDAO {
     @Override
     public int addPokemon(Pokemon pokemon) {
 
-        String sql = """
-                INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)
-                VALUES(?, ?, ?, ?, ?, ?)
-                """;
+        String sql =
+                "INSERT INTO pokedex (trainer_id, name, pokeapi_id, sprite_link, hp, level)" +
+                " VALUES(?, ?, ?, ?, ?, ?)";
 
         // Use .update Method when Inserting/deleting/updating
 
@@ -99,10 +95,10 @@ public class PokemonDataAccessService implements PokemonDAO {
     }
     @Override
     public List <Pokemon> getAllPokemonByTrainerId (Integer trainerId) {
-        String sql = """
-                SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level
-                FROM pokedex WHERE trainer_id = ?
-                """;
+        String sql =
+                "SELECT id, trainer_id, name, pokeapi_id, sprite_link, hp, level" +
+                " FROM pokedex WHERE trainer_id = ?";
+
         RowMapper<Pokemon> pokemonRowMapper = (rs, rowNum) -> {
             Pokemon onePokemon = new Pokemon(
                     rs.getInt("id"),
