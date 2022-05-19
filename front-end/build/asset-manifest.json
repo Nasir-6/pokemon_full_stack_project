@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1de46027.css",
+    "main.js": "/static/js/main.4dc167f1.js",
+    "static/js/787.22edae46.chunk.js": "/static/js/787.22edae46.chunk.js",
+    "static/media/green_background.png": "/static/media/green_background.1800def144e8c21bcf97.png",
+    "static/media/home_background.webp": "/static/media/home_background.1e97cc467125d949cbeb.webp",
+    "static/media/map_iain2.png": "/static/media/map_iain2.d20b5657eb4ca5a94fc1.png",
+    "static/media/squirtle.png": "/static/media/squirtle.5406ef593ec743416dcc.png",
+    "static/media/charmander.png": "/static/media/charmander.4fd5701aa09647505bc4.png",
+    "static/media/sad_bulbasaur.png": "/static/media/sad_bulbasaur.418023b7ac64b8f350f1.png",
+    "static/media/pikachu.png": "/static/media/pikachu.d20bdd5d52ce4df7f2b0.png",
+    "static/media/pikachu_sleep.jpeg": "/static/media/pikachu_sleep.99f2f4132031bdb1b272.jpeg",
+    "static/media/home.jpeg": "/static/media/home.63c9931b1c8341974221.jpeg",
+    "static/media/POKEPALS.png": "/static/media/POKEPALS.0df92c09125f000feb4c.png",
+    "static/media/ashSprite.png": "/static/media/ashSprite.e06673634e19434aed03.png",
+    "index.html": "/index.html",
+    "main.1de46027.css.map": "/static/css/main.1de46027.css.map",
+    "main.4dc167f1.js.map": "/static/js/main.4dc167f1.js.map",
+    "787.22edae46.chunk.js.map": "/static/js/787.22edae46.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1de46027.css",
+    "static/js/main.4dc167f1.js"
+  ]
+}
