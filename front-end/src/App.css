@@ -1,0 +1,549 @@
+:root {
+  --logo-color: rgb(255 204 0);
+  --dark-yellow-color: rgb(213 161 0);
+  --blue-color1: rgb(0 117 190);
+  --dark-color: rgb(10 40 95);
+  --red-color:rgb(251 27 27);
+  --off-red-color:rgb(227 53 13);
+  --grey-color:rgb(223 223 223);
+  --background-color: rgb(245 245 245);
+  --dark-background-color: rgb(130, 26, 17);
+  
+  --grid-length: 32;
+}
+
+* {
+padding: 0px;
+margin: 0px;
+box-sizing: border-box;
+/* font-family: 'M PLUS Rounded 1c', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+font-family:'Nunito', sans-serif;
+}
+
+#root {
+  /* background-color: var(--dark-background-color); */
+  /* background-image: url("./images/background.png"); */
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+}
+
+.background-overlay{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(210, 204, 204);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+/* =============== NAVBAR CSS ================ */
+
+.navbar {
+display:flex;
+justify-content: space-between;
+align-items:center;
+background-color:var(--dark-color);
+width: 100%;
+padding: 1rem;
+}
+
+.navbar-left {
+display:flex;
+align-items:flex-start;
+justify-content: space-between; 
+}
+
+.navbar-right {
+display:flex;
+/* to add space between the buttons */
+column-gap: 20px;
+/* we used padding here to move the buttons to the left */
+/* padding-right:150px;  */
+}
+
+/* Responsive design */
+/* Default html font-size is 16px */
+/* rem is 16px * value
+1.5 rem = 16 * 1.5 = 24px
+So for responive design */
+.btn {
+  background-color:var(--dark-color);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  text-align: center;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  border: 1px var(--logo-color) solid;
+} 
+
+a {
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--logo-color);
+  color: var(--dark-color);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+  background-color: var(--dark-color);
+  color: white;
+  box-shadow: 5px;
+  transform: translate(4px);
+}
+
+
+
+/* =============== FOOTER ================ */
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dark-color);
+  padding: 1rem;
+}
+
+.footer-logo {
+  width: 7rem; 
+}
+
+/* .footer-middle {
+  justify-self: center;
+} */
+
+.footer-right {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  color: white;
+}
+
+.footer-middle {
+  justify-self: flex-start;
+  display: flex;
+}
+
+.footer-middle a {
+  color: white;
+  width:40px;
+  height:40px;
+  padding: 5px;
+  background: var(--dark-color);
+  transition: .5s;
+}
+
+a .social-icon {
+  height:100%;
+  background: var(--dark-color);
+  color: white;
+  transition: .5s;
+}
+
+a:hover .social-icon{
+  color: var(--logo-color);
+}
+
+
+
+/* =============== HOME PAGE ================ */
+
+.home-container {
+  min-width: 100%;
+  min-height: 80vh;
+  background-image: url('./images/pikachu_sleep.jpeg');
+  background-size: cover;
+
+  
+}
+
+.home-background-overlay{
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0,0,0,0.15); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1.5rem;
+  
+  
+}
+
+.home-title {
+  color: white;
+  color: var(--dark-color);
+/* padding: 20px; */
+/* margin-top: 40px; */
+font-size: 50px;
+font-weight: 550;
+/* position: absolute; */
+
+}
+
+.home-text {
+  /* position: absolute; */
+  /* margin: 200px; */
+  color: var(--dark-color);
+  font-weight: 900;
+  font-size: 18px;
+  max-width: 500px;
+  padding: 1.5rem;
+  line-height: 1.75rem;
+}
+
+/* .home_background {
+  width: 100%;
+  height: 100%;
+} */
+
+.home-btn {
+  margin-left: 1.5rem;
+}
+
+/* .home-btn:hover {
+  background-color: grey;
+  border:none;
+} */
+
+
+
+/* =============== LOGIN PAGE ================ */
+
+.login-form {
+	padding: 20px 0;
+	position: relative;
+	z-index: 2;
+}
+	
+input {
+		display: block;
+		border: 1px solid black;
+		background-color:rgb(255, 226, 109);
+		width: 250px;
+		
+		border-radius: 8px;
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		text-align: center;
+		font-size: 18px;
+				
+		transition-duration: 0.25s;
+		font-weight: 300;
+    color: black;
+}
+		
+.login-inputs:hover {
+  background-color: var(--logo-color);
+  border-color: black;
+}
+
+.login-submit-btn {
+  width: 150px;
+}
+
+.invalidText {
+  color: red;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+
+
+/* =============== SIGN-UP PAGE ================ */
+
+.signup-form {
+	padding: 20px 0;
+	position: relative;
+	z-index: 2;
+}
+
+.signup-inputs {
+  width: 350px;
+}
+
+.signup-submit-btn {
+  width: 150px;
+}
+		
+.signup-inputs:hover {
+  background-color: var(--logo-color);
+  border-color: black;
+}
+
+
+
+/* =============== POKEDEX PAGE ================ */
+
+.pokedex-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.pokedex-header {
+  padding-bottom: 1rem;
+}
+
+.all-pokemon-container {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pokemonCard {
+  /* background-color: transparent; */
+  background-color: rgb(206, 220, 234);
+  color: darkslategrey;
+  width: 250px;
+  /* height: 300px; */
+  font-family: sans-serif;
+  margin: 2rem;
+  margin-bottom: 2rem;
+  /* padding: 5%; */
+  padding: 3% 3% 1% 3% ;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(100, 100, 100, 0.7);
+}
+
+/* .card-title {
+  font-weight: bolder;
+} */
+
+.card-img-container {
+  width: 8rem;
+  height: 8rem;
+  /* background-color: #ffeec5; */
+  background-color: rgb(255, 238, 197, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+
+/* .pokemon-sprite {
+  height: 150%;
+} */
+
+.card-img-container img {
+  width:150px;
+  object-fit: contain;
+}
+
+.pokemon-hp, .pokemon-level{
+  padding-bottom: 0.25rem;
+
+}
+
+
+/* delete(release) button for each pokedex */
+
+.release-btn {
+  background-color:var(--dark-color);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  border: 1px var(--logo-color) solid;
+  margin-top: 0.5rem;
+
+} 
+
+a {
+  text-decoration: none;
+}
+
+.release-btn:hover {
+  background-color: var(--logo-color);
+  color: var(--dark-color);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+.release-btn:active {
+  background-color: var(--dark-color);
+  color: white;
+  box-shadow: 5px;
+  transform: translate(4px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============== MAP PAGE ================ */
+
+.map-page {
+  display: grid;
+  grid-template-areas: 
+  "grid moves"
+  "grid wildPokemon";
+  background-color: var(--background-color);
+  padding: 4rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 80vh;
+}
+
+.surprised-pikachu-page, .sad-bulbasaur-page{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.grid-container {
+  grid-area: grid;
+  background-color: #1C2541;
+  /* background-image: url("./images/map.jpeg"); */
+  background-image: url("./images/map_iain2.png");
+  background-size: cover;
+  background-position: right;
+  min-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-length), 1fr);
+  grid-template-rows: repeat(var(--grid-length), 1fr);
+  width: 512px;
+  height: 512px;
+}
+
+.oneGrid{
+  /* border: 1px red solid; */
+}
+
+.user-grid {
+  background-image: url("./images/ashSprite.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+.moves-container {
+  grid-area: moves;
+  padding: 1rem;
+  display: grid;
+  grid-template-areas: 
+  ". up ."
+  "left user right"
+  ". down .";
+  width: fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.up-btn {
+  grid-area: up;
+
+}
+
+.right-btn {
+  grid-area: right;
+}
+
+.down-btn {
+  grid-area: down;
+}
+
+.left-btn {
+  grid-area: left;
+}
+
+.user-sprite {
+  grid-area: user;
+  width: 50px;
+}
+
+.up-btn, 
+.down-btn, 
+.left-btn, 
+.right-btn,
+.user-sprite{
+  justify-self:center;
+  align-self: center;
+}
+
+.wild-pokemon-container {
+  grid-area: wildPokemon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-width: 240px;
+  min-height: 240px;
+  align-self: flex-start;
+  gap: 0.55rem;
+  text-align: center;
+  min-width: 290px;
+
+}
+
+.wildPokemon-sprite{
+  width: 100px;
+}
+
+@media only screen and (max-width: 1080px) {
+
+  /* 1.5 rem = 12 * 1.5 = 18px  */
+    /* html { 
+        font-size: 12px;
+    } */
+
+    .map-page {
+      grid-template-areas: 
+      "grid grid"
+      "moves wildPokemon";
+      padding: 2rem; 
+    }
+
+  }
+
