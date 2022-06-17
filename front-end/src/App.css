@@ -233,8 +233,11 @@ font-weight: 550;
 
 .login-form {
 	padding: 20px 0;
-	position: relative;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
 	z-index: 2;
+
 }
 	
 input {
@@ -259,7 +262,7 @@ input {
   border-color: black;
 }
 
-.login-submit-btn {
+.login-submit-btn, .demo-login-btn {
   width: 150px;
 }
 

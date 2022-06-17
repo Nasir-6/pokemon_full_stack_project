@@ -90,7 +90,7 @@ export default function Login({updateCurrentUser}) {
       <input type="password"  id="password-input" className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
       <p className="invalidText">{invalidInputWarning}</p>
       <input type="submit" name="login" id="login-btn" className='btn login-submit-btn' value="Login"/>
-      <button className='btn' onClick={handleDemoLoginButton}>Demo Login</button>
+      <button className='btn demo-login-btn' onClick={handleDemoLoginButton}>Demo Login</button>
       </form>
 
       <img src={squirtle} alt="spurtle" />
