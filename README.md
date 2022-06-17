@@ -7,9 +7,9 @@ By Hajr, Nasir, Rachel and Shirhan.
 * [Project Description](#project-description)
 * [Local Setup Instructions](#local-setup-instructions)
 * [Features](#features)
-    * [Professional and Responsive UI](#professional-and-responsive-ui)
-    * [Functional Login System](#functional-login-system)
-    * [Intutive Booking System](#intuitive-booking-system)
+    * [Pokémon Themed UI](#pokmon-themed-ui)
+    * [Functional Login/Signup System](#functional-loginsignup-system)
+    * [2D Map System and Personal Pokédex](#2d-map-system-and-personal-pokdex)
 * [Future Improvements](#future-improvements)
 * [What we learnt](#what-we-learnt)
 * [Contributors](#contributors)
@@ -54,7 +54,7 @@ If you would like to deploy the application locally please follow the instructio
 - Inputs are validated and popups are used to warn users
 - Keeps users logged in until they log out
 
-### 2D Map system and integrated personal Pokédex
+### 2D Map System and Personal Pokédex
 ![booking system features](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/map-demo.gif)
 - A 2D map system allowing users to move around and catch various Pokémon
 - Boundary detection to prevent user leaving the map
@@ -72,7 +72,7 @@ If you would like to deploy the application locally please follow the instructio
 - The use of React Hooks (UseEffect, UseState)
 - Better understanding of the React Lifecycle and Virtual DOM - due to development of the map mechanics
 - The use of SessionStorage to keep track of logged-in user
-- The use of ReactRouter to create a multipage React App
+- The use of ReactRouter to create a multi-page React App
 - The access to the various input types within HTML forms (date, time etc.) - allowing basic validation of inputs 
 
 ## Future improvements
