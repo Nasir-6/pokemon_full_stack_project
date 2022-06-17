@@ -44,45 +44,48 @@ If you would like to deploy the application locally please follow the instructio
 ## Features
 ### Pokémon Themed UI
 ![Pokemon UI](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/responsive_UI_demo.gif)
+Gif showing the design and also pokemon sprites 
 - Website designed with the official Pokémon color scheme in mind
-- About/Services pages to give users more information about the company
-- Responsive design with a collapsing Navbar to allow use on mobile devices
+- Utilises the [PokéAPI](https://pokeapi.co/) to grab official sprites of Pokémon
 
 ### Functional Login/Signup System
 ![Login system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/login_system_demo.gif)
-- Users can log in as a doctor or patient
-- They both their name and id in order to login successfully
-- Warning text is shown if incorrect details are used
-- Redirects to the user's dedicated page to show all appointments
+Gif showing Signup as mohammed and then login and then catch pokemon 
+- Users can signup for a new account, using a username, email and password 
+- They can then login using their email and password and begin catching Pokémon to fill in their Pokédex
+- Inputs are validated and popups are used to warn users
 - Keeps users logged in until they log out
 
-### Intuitive Booking System
+### 2D Map system and integrated personal Pokédex
 ![booking system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/Booking_system_demo.gif)
-- Clean design laying out all current appointments
-- Intuitive booking system allowing doctors to update, cancel or create new appointments
-- Use of various input types such as dates, time and dropdown menus to aid the process
+Gif showing the user going to the edge and catching pokemon, then viewing in the pokedex, then releasing 
+- A 2D map system allowing users to move around and catch various Pokémon
+- Boundary detection to prevent user leaving the map
+- Randomised Pokémon, level and HP during each new encounter
+- All caught Pokémon are saved in the Pokédex and can be viewed/released by the user
+
 
 
 ## What we learnt
 - How to plan and develop a full-stack application which also utilises an external API
 - How to use GitHub for collaboration (using branches and dealing with merge conflicts)
-- Connecting an external Java/SpringBoot Back-end to a React front-end
+- Connecting an external API as well as a Java/SpringBoot Back-end to a React front-end
 - The structuring of a React application to ensure states are at a suitable level within the app - This aims to minimise prop-drilling whilst still allowing access to states where needed
 - The use of conditional rendering to show certain buttons or pages in different scenarios
 - The use of React Hooks (UseEffect, UseState)
+- Better understanding of the React Lifecycle and Virtual DOM - due to development of the map mechanics
 - The use of SessionStorage to keep track of logged-in user
 - The use of ReactRouter to create a multipage React App
-- The importance of developing the back-end with the front-end application in mind
-- Security issues arising from using the url as a means of holding user information
-- The use of flexbox, grid and media queries to create a responsive web application (including a collapsing navbar menu)
-- The access to the various input types within HTML forms (date, time etc.)
+- The access to the various input types within HTML forms (date, time etc.) - allowing basic validation of inputs 
 
 ## Future improvements
 - Write tests for JS/ReactJs features
-- Complete the SignUp section to allow new doctors/patients to register
-- Show expired appointments and upcoming appointments (date order)
+- Have Encryption for user details in the database - perhaps using Spring Security
 - Use Redux to manage states throughout the application (Useful for keeping track of logged-in user across the app, rather than using SessionStorage)
-- Fix logout bug when refreshing page
+- Email confirmation during signup
+- Integrate a Pokémon Battle system - was a stretch goal but deemed very difficult due to the nature of the game mechanics
+- Improved Map mechanics - prevent user from jumping/climbing buildings/trees
+
 
 ## Contributors
 
