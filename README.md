@@ -21,6 +21,7 @@ By Hajr, Nasir, Rachel and Shirhan.
 ## Project Description
 
 This is a full-stack project which utilises the [PokéAPI](https://pokeapi.co/) to attempt to build a Pokémon game based off the formerly known fan game - [Pokémon Crater](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Vortex).  
+
 This project was the full-stack group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4).
 
 The front-end was built using HTML, CSS and ReactJs, whilst the back-end was developed using Java, SpringBoot and a PostgreSQL database.
