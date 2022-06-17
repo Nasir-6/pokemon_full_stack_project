@@ -1,6 +1,6 @@
 # PokéPals Full Stack Project
 
-By Hajr, Nasir, Rachel and Shirhan.
+By Hajr, Nasir, Rachel, Shirhan and Suraya.
 
 ## Table of contents
 <!--ts-->
@@ -91,3 +91,4 @@ If you would like to deploy the application locally please follow the instructio
 - [Nasir](https://github.com/Nasir-6)
 - [Rachel](https://github.com/RKaurB)
 - [Shirhan](https://github.com/shirhan25)
+- [Suraya](https://github.com/SurayaHasan)
