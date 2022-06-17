@@ -7,7 +7,7 @@ By Hajr, Nasir, Rachel and Shirhan.
 * [Project Description](#project-description)
 * [Local Setup Instructions](#local-setup-instructions)
 * [Features](#features)
-    * [Pokémon Themed UI](#pokmon-themed-ui)
+    * [Pokémon Themed UI](#pokemon-themed-ui)
     * [Functional Login/Signup System](#functional-loginsignup-system)
     * [2D Map System and Personal Pokédex](#2d-map-system-and-personal-pokdex)
 * [Future Improvements](#future-improvements)
@@ -42,7 +42,7 @@ If you would like to deploy the application locally please follow the instructio
 
 
 ## Features
-### Pokémon Themed UI
+### Pokemon Themed UI
 ![Pokemon UI](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/pokepal-theme-demo.gif)
 - Website designed with the official Pokémon color scheme in mind
 - Utilises the [PokéAPI](https://pokeapi.co/) to grab official sprites of Pokémon
