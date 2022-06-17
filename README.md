@@ -23,9 +23,9 @@ By Hajr, Nasir, Rachel and Shirhan.
 This is a full-stack project which utilises the [PokéAPI](https://pokeapi.co/) to attempt to build a Pokémon game based off the formerly known fan game - [Pokémon Crater](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Vortex).  
 This project was the full-stack group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4).
 
-The front-end was built using HTML, CSS and ReactJs, whilst the back-end was developed using Java, SpringBoot and PostgreSQL database.
+The front-end was built using HTML, CSS and ReactJs, whilst the back-end was developed using Java, SpringBoot and a PostgreSQL database.
 
-If currently deployed it can be found [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are any issues.
+[//]: # (If currently deployed it can be found [here]&#40;https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/&#41;. Please email at mfinasir06@gmail.com if it isn't or there are any issues.)
 If you would like to deploy the application locally please follow the instructions below.
 
 ## Local Setup Instructions
