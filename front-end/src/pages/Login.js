@@ -72,6 +72,13 @@ export default function Login({updateCurrentUser}) {
     setPassword(event.target.value);
   }
 
+  const handleDemoLoginButton = () => {
+    document.getElementById("email-input").value= "nasir@gmail.com";
+    document.getElementById("password-input").value= "password";
+    setEmail("nasir@gmail.com")
+    setPassword("password")
+  }
+
 
 
   return (
@@ -79,10 +86,11 @@ export default function Login({updateCurrentUser}) {
       <h1>Login</h1>
 
       <form  action="post" className='login-form' onSubmit={handleSubmitButton}>
-      <input type="email"  className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
-      <input type="password"  className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
+      <input type="email"  id="email-input" className="login-inputs" placeholder="Enter email address" onChange={handleEmailChange} required></input>
+      <input type="password"  id="password-input" className="login-inputs" placeholder="Enter password" onChange={handlePasswordChange} required></input>
       <p className="invalidText">{invalidInputWarning}</p>
       <input type="submit" name="login" id="login-btn" className='btn login-submit-btn' value="Login"/>
+      <button className='btn' onClick={handleDemoLoginButton}>Demo Login</button>
       </form>
 
       <img src={squirtle} alt="spurtle" />
