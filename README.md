@@ -67,8 +67,8 @@ If you would like to deploy the application locally please follow the instructio
 ## What we learnt
 - How to plan and develop a full-stack application which also utilises an external API
 - How to use GitHub for collaboration (using branches and dealing with merge conflicts)
-- Connecting an external API as well as a Java/SpringBoot Back-end to a React front-end
-- The structuring of a React application to ensure states are at a suitable level within the app - This aims to minimise prop-drilling whilst still allowing access to states where needed
+- Connecting an external API as well as a Java/SpringBoot Back-end to a React front-end 
+- How to structure a React application to ensure states are at a suitable level within the app with the aim of minimising prop-drilling whilst still allowing access to states where needed
 - The use of conditional rendering to show certain buttons or pages in different scenarios
 - The use of React Hooks (UseEffect, UseState)
 - Better understanding of the React Lifecycle and Virtual DOM - due to development of the map mechanics
