@@ -43,22 +43,19 @@ If you would like to deploy the application locally please follow the instructio
 
 ## Features
 ### Pokémon Themed UI
-![Pokemon UI](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/responsive_UI_demo.gif)
-Gif showing the design and also pokemon sprites 
+![Pokemon UI](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/pokepal-theme-demo.gif)
 - Website designed with the official Pokémon color scheme in mind
 - Utilises the [PokéAPI](https://pokeapi.co/) to grab official sprites of Pokémon
 
 ### Functional Login/Signup System
-![Login system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/login_system_demo.gif)
-Gif showing Signup as mohammed and then login and then catch pokemon 
+![Login system features](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/login-demo.gif)
 - Users can signup for a new account, using a username, email and password 
 - They can then login using their email and password and begin catching Pokémon to fill in their Pokédex
 - Inputs are validated and popups are used to warn users
 - Keeps users logged in until they log out
 
 ### 2D Map system and integrated personal Pokédex
-![booking system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/Booking_system_demo.gif)
-Gif showing the user going to the edge and catching pokemon, then viewing in the pokedex, then releasing 
+![booking system features](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/map-demo.gif)
 - A 2D map system allowing users to move around and catch various Pokémon
 - Boundary detection to prevent user leaving the map
 - Randomised Pokémon, level and HP during each new encounter
