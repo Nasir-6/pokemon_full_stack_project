@@ -35,7 +35,7 @@ If you would like to deploy the application locally please follow the instructio
    ```git clone git@github.com:Nasir-6/pokemon_full_stack_project.git```
 2. Follow the commands in the [sql_queries.md](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/pokemon-back-end/sql_queries.md) file to create the database.
 3. Run the back-end by opening the "pokemon-back-end" folder using the IntelliJ IDE and running it - the server port should configure to 8080 by default (if not please kill any other processes to free up this port).
-4. Open the "front-end" folder using VsCode and run ```npm install``` to install the required node modules.
+4. Open the "front-end" folder using VSCode and run ```npm install``` to install the required node modules.
 5. Run the front-end application using ```npm start``` - this should run the application on localhost:3000
 6. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
 7. Enjoy! ;)
