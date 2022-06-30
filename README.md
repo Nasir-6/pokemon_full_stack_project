@@ -24,7 +24,7 @@ This is a full-stack project which utilises the [PokéAPI](https://pokeapi.co/) 
 
 This project was the full-stack group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4).
 
-The front-end was built using HTML, CSS and ReactJs, whilst the back-end was developed using Java, SpringBoot and a PostgreSQL database.
+The front-end was built using HTML, CSS and JS (ReactJS), whilst the back-end was developed using Java (Spring Boot) and a PostgreSQL database.
 
 [//]: # (If currently deployed it can be found [here]&#40;https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/&#41;. Please email at mfinasir06@gmail.com if it isn't or there are any issues.)
 If you would like to deploy the application locally please follow the instructions below.
@@ -50,16 +50,16 @@ If you would like to deploy the application locally please follow the instructio
 
 ### Functional Login/Signup System
 ![Login system features](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/login-demo.gif)
-- Users can signup for a new account, using a username, email and password 
+- Users can signup for a new account using a username, email and password 
 - They can then login using their email and password and begin catching Pokémon to fill in their Pokédex
-- Inputs are validated and popups are used to warn users
+- Inputs are validated and popups are used to warn users of invalid inputs
 - Keeps users logged in until they log out
 
 ### 2D Map System and Personal Pokédex
 ![booking system features](https://github.com/Nasir-6/pokemon_full_stack_project/blob/main/demo-gifs/map-demo.gif)
 - A 2D map system allowing users to move around and catch various Pokémon
 - Boundary detection to prevent user leaving the map
-- Randomised Pokémon, level and HP during each new encounter
+- Randomised Pokémon, level and HP for each new encounter
 - All caught Pokémon are saved in the Pokédex and can be viewed/released by the user
 
 
@@ -67,22 +67,22 @@ If you would like to deploy the application locally please follow the instructio
 ## What we learnt
 - How to plan and develop a full-stack application which also utilises an external API
 - How to use GitHub for collaboration (using branches and dealing with merge conflicts)
-- Connecting an external API as well as a Java/SpringBoot Back-end to a React front-end 
+- Connecting an external API as well as a Java (Spring Boot) back-end to a React front-end 
 - How to structure a React application to ensure states are at a suitable level within the app with the aim of minimising prop-drilling whilst still allowing access to states where needed
 - The use of conditional rendering to show certain buttons or pages in different scenarios
 - The use of React Hooks (UseEffect, UseState)
-- Better understanding of the React Lifecycle and Virtual DOM - due to development of the map mechanics
+- Better understanding of the React Lifecycle and Virtual DOM through the development of the map mechanics
 - The use of SessionStorage to keep track of logged-in user
 - The use of ReactRouter to create a multi-page React App
-- The access to the various input types within HTML forms (date, time etc.) - allowing basic validation of inputs 
+- The access to the various input types within HTML forms (email, password etc.) - allowing basic validation/formatting of inputs 
 
 ## Future improvements
-- Write tests for JS/ReactJs features
-- Have Encryption for user details in the database - perhaps using Spring Security
+- Write tests for JS/ReactJS features
+- Use an encryption process for user details in the database - perhaps using Spring Security
 - Use Redux to manage states throughout the application (Useful for keeping track of logged-in user across the app, rather than using SessionStorage)
 - Email confirmation during signup
-- Integrate a Pokémon Battle system - was a stretch goal but deemed very difficult due to the nature of the game mechanics
-- Improved Map mechanics - prevent user from jumping/climbing buildings/trees
+- Integrate a Pokémon Battle system - was a stretch goal but deemed very time-consuming due to the nature of the game mechanics
+- Improved map mechanics - prevent user from jumping/climbing buildings and trees
 
 
 ## Contributors
